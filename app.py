@@ -53,6 +53,7 @@ cols[1].metric('Low pressure under load',f"{kpi['low_pressure_share']:.1%}" if k
 cols[2].metric('Review incidents',f"{kpi['incidents']:,}")
 cols[3].metric('Candidate hours',f"{kpi['candidate_hours']:,}")
 st.caption('Low-pressure share = readings below 7 bar ÷ readings with current ≥6 A. Consecutive candidate hours form one review incident; neither measure is confirmed downtime.')
+st.info('**Rule eligibility — 4.21%** · 186 of 4,416 observed hours were evaluated across the full 2020 source. The other 4,230 hours were not evaluated: 4,204 lacked current loaded samples only, 26 lacked both current and baseline samples, and none lacked baseline samples only. All 186 evaluated hours had no breach; zero had a breach. The ≥6 A loaded-state proxy needs domain validation.')
 
 THEME=dict(template='plotly_white',font=dict(family='Arial',color='#233952'),margin=dict(l=10,r=15,t=40,b=20),height=320,legend=dict(orientation='h',y=-.18),hovermode='x unified')
 def line(data,x,series,title,unit=None,pct=False,overlays=False):
@@ -61,13 +62,32 @@ def line(data,x,series,title,unit=None,pct=False,overlays=False):
         fig.add_trace(go.Scatter(x=data[x],y=data[name],name=label,mode='lines',line=dict(color=color,width=2),connectgaps=False))
     fig.update_layout(**THEME,title=dict(text=title,font=dict(size=16)))
     if unit:fig.update_yaxes(title=unit)
-    if pct:fig.update_yaxes(tickformat='.0%')
+    if pct:fig.update_yaxes(tickformat='.0%',range=[0,1])
     if overlays:
         for _,r in reports.iterrows():
             fig.add_vrect(x0=max(r.starts_at,pd.Timestamp(lo)),x1=min(r.ends_at,pd.Timestamp(hi)+pd.Timedelta(days=1)),fillcolor='#f59e0b',opacity=.13,line_width=0)
     return fig
 
-overview,investigate,maintenance,quality=st.tabs(['Operations overview','Incident investigation','Maintenance review','Data & definitions'])
+overview,investigate,maintenance,quality,superset=st.tabs(['Operations overview','Incident investigation','Maintenance review','Data & definitions','Apache Superset 3.0 Analytics'])
+with superset:
+    st.subheader('Apache Superset 3.0 Analytics')
+    st.write('Apache Superset 3.0 is the primary SQL analytics and operational dashboard layer. The verified local deployment contains 7 datasets, 16 charts, historical filters, and scheduled SQL alert evaluation through Celery and Redis. Streamlit provides the public portfolio interface.')
+    st.caption('Apache Superset 3.0 • PostgreSQL • Advanced SQL • Celery • Redis • Docker • Streamlit')
+    st.info('Superset runs locally through Docker. Screenshots represent the verified historical analytics environment. This application does not claim a live equipment feed or external SMTP delivery.')
+    gallery=[
+        ('Dashboard overview','superset_dashboard.png','The complete 2020 filter, headline counts, and pressure and oil-temperature trends.'),
+        ('Rule eligibility','superset_eligibility.png','4.21% eligibility: 186 evaluated hours, 4,230 not evaluated hours, and zero candidate incidents.'),
+        ('Exclusion reasons','superset_eligibility_reasons.png','Exclusive reasons: 4,204 current-sample only, 26 both sample requirements, and zero baseline-only exclusions.'),
+        ('Sensor context','superset_context.png','2020 panel-pressure and oil-temperature trends, current-based operating states, and rule coverage.'),
+        ('Alert delivery','superset_alerts.png','Mailpit captured two TEST ONLY notifications from the scheduled local SQL alert; both alert schedules were disabled afterward.'),
+    ]
+    for tab,(_,filename,caption) in zip(st.tabs([item[0] for item in gallery]),gallery):
+        with tab:
+            image_path=ROOT/'evidence'/filename
+            if image_path.is_file():
+                st.image(str(image_path),caption=caption,use_container_width=True)
+            else:
+                st.error(f'Verified screenshot unavailable: {filename}')
 with overview:
     # Explicit gaps prevent interpolation across missing calendar days.
     continuous=days.set_index('reading_date').reindex(pd.date_range(lo,hi,freq='D')).rename_axis('reading_date').reset_index()
