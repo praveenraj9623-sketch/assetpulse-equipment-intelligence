@@ -1,0 +1,712 @@
+dashboard_title: AssetPulse Equipment Intelligence
+description: null
+css: null
+slug: assetpulse-equipment-intelligence
+uuid: 07f72517-5c90-40e1-806f-6ea9e1171ba8
+position:
+  DASHBOARD_VERSION_KEY: v2
+  ROOT_ID:
+    type: ROOT
+    id: ROOT_ID
+    children:
+    - GRID_ID
+  GRID_ID:
+    type: GRID
+    id: GRID_ID
+    children:
+    - ROW-context
+    - ROW-observations
+    - ROW-eligibility_percent
+    - ROW-pressure
+    - ROW-states
+    - ROW-exclusions
+    - ROW-rule
+    - ROW-baseline
+    - ROW-incident_table
+    - ROW-reports
+    - ROW-maintenance
+    - ROW-quality
+    - ROW-provenance
+    - ROW-N-OUZAS5U4
+    parents:
+    - ROOT_ID
+  HEADER_ID:
+    type: HEADER
+    id: HEADER_ID
+    meta:
+      text: AssetPulse Equipment Intelligence
+  ROW-context:
+    type: ROW
+    id: ROW-context
+    children:
+    - MARKDOWN-context
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      background: BACKGROUND_TRANSPARENT
+  MARKDOWN-context:
+    type: MARKDOWN
+    id: MARKDOWN-context
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-context
+    meta:
+      code: "**Historical railway compressor telemetry · MetroPT-3 · 2020**  \nUse\
+        \ the time filter to explore recorded observations. Timestamps have no published\
+        \ timezone; trend gaps are unobserved periods. Counts describe observations\
+        \ and candidate windows, never confirmed failures or downtime. Zero candidates\
+        \ is a valid rule result."
+      width: 12
+      height: 15
+  ROW-observations:
+    type: ROW
+    id: ROW-observations
+    children:
+    - CHART-observations
+    - CHART-candidates
+    - CHART-incidents
+    - CHART-eligible
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      background: BACKGROUND_TRANSPARENT
+  CHART-observations:
+    type: CHART
+    id: CHART-observations
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-observations
+    meta:
+      chartId: 1
+      width: 3
+      height: 18
+      sliceName: Observations
+  CHART-candidates:
+    type: CHART
+    id: CHART-candidates
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-observations
+    meta:
+      chartId: 2
+      width: 3
+      height: 18
+      sliceName: Candidate investigation hours
+  CHART-incidents:
+    type: CHART
+    id: CHART-incidents
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-observations
+    meta:
+      chartId: 3
+      width: 3
+      height: 18
+      sliceName: Candidate incidents
+  CHART-eligible:
+    type: CHART
+    id: CHART-eligible
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-observations
+    meta:
+      chartId: 4
+      width: 3
+      height: 18
+      sliceName: Rule-eligible hours
+  ROW-eligibility_percent:
+    type: ROW
+    id: ROW-eligibility_percent
+    children:
+    - CHART-eligibility_percent
+    - CHART-not_evaluated
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      background: BACKGROUND_TRANSPARENT
+  CHART-eligibility_percent:
+    type: CHART
+    id: CHART-eligibility_percent
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-eligibility_percent
+    meta:
+      chartId: 14
+      width: 6
+      height: 18
+      sliceName: Eligible observed hours (%)
+  CHART-not_evaluated:
+    type: CHART
+    id: CHART-not_evaluated
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-eligibility_percent
+    meta:
+      chartId: 15
+      width: 6
+      height: 18
+      sliceName: Not evaluated hours
+  ROW-pressure:
+    type: ROW
+    id: ROW-pressure
+    children:
+    - CHART-pressure
+    - CHART-temperature
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      background: BACKGROUND_TRANSPARENT
+  CHART-pressure:
+    type: CHART
+    id: CHART-pressure
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-pressure
+    meta:
+      chartId: 5
+      width: 6
+      height: 45
+      sliceName: Daily panel pressure (bar)
+  CHART-temperature:
+    type: CHART
+    id: CHART-temperature
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-pressure
+    meta:
+      chartId: 6
+      width: 6
+      height: 45
+      sliceName: Daily oil temperature (C)
+  ROW-states:
+    type: ROW
+    id: ROW-states
+    children:
+    - CHART-states
+    - CHART-eligibility
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      background: BACKGROUND_TRANSPARENT
+  CHART-states:
+    type: CHART
+    id: CHART-states
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-states
+    meta:
+      chartId: 7
+      width: 6
+      height: 34
+      sliceName: Operating-state observations
+  CHART-eligibility:
+    type: CHART
+    id: CHART-eligibility
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-states
+    meta:
+      chartId: 8
+      width: 6
+      height: 34
+      sliceName: Rule evaluation coverage (hours)
+  ROW-exclusions:
+    type: ROW
+    id: ROW-exclusions
+    children:
+    - CHART-exclusions
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      background: BACKGROUND_TRANSPARENT
+  CHART-exclusions:
+    type: CHART
+    id: CHART-exclusions
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-exclusions
+    meta:
+      chartId: 16
+      width: 12
+      height: 22
+      sliceName: Why hours were not evaluated (exclusive counts)
+  ROW-rule:
+    type: ROW
+    id: ROW-rule
+    children:
+    - MARKDOWN-rule
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      background: BACKGROUND_TRANSPARENT
+  MARKDOWN-rule:
+    type: MARKDOWN
+    id: MARKDOWN-rule
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-rule
+    meta:
+      code: '**pressure-v1, unchanged:** TP3 < 7 bar while current ≥ 6 A; hourly share
+        ≥ 15% **and** ≥ 2× prior share. Evaluation requires ≥ 30 current and ≥ 300
+        prior loaded observations. **Not evaluated is not no breach.** Prior means
+        [hour − 7 days, hour), excluding the current hour; a fully populated week
+        is not required. Current is a proxy (typical loaded ≈ 7 A; startup ≈ 9 A),
+        not a validated state label. Missing hours are not downtime.'
+      width: 12
+      height: 22
+  ROW-baseline:
+    type: ROW
+    id: ROW-baseline
+    children:
+    - CHART-baseline
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      background: BACKGROUND_TRANSPARENT
+  CHART-baseline:
+    type: CHART
+    id: CHART-baseline
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-baseline
+    meta:
+      chartId: 9
+      width: 12
+      height: 48
+      sliceName: Hourly low-pressure share, historical baseline and rule (%)
+  ROW-incident_table:
+    type: ROW
+    id: ROW-incident_table
+    children:
+    - CHART-incident_table
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      background: BACKGROUND_TRANSPARENT
+  CHART-incident_table:
+    type: CHART
+    id: CHART-incident_table
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-incident_table
+    meta:
+      chartId: 10
+      width: 12
+      height: 30
+      sliceName: Incident investigation queue (start-date filter)
+  ROW-reports:
+    type: ROW
+    id: ROW-reports
+    children:
+    - MARKDOWN-reports
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      background: BACKGROUND_TRANSPARENT
+  MARKDOWN-reports:
+    type: MARKDOWN
+    id: MARKDOWN-reports
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-reports
+    meta:
+      code: "**Historical context and source quality**  \nThe sections below always\
+        \ show the full source and are excluded from the time filter. Four published\
+        \ maintenance intervals are context only; absence of a report does not establish\
+        \ healthy operation. Local TEST ONLY SMTP delivery is verified through Mailpit. Both alert schedules are disabled. External email and live equipment monitoring are not configured."
+      width: 12
+      height: 15
+  ROW-maintenance:
+    type: ROW
+    id: ROW-maintenance
+    children:
+    - CHART-maintenance
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      background: BACKGROUND_TRANSPARENT
+  CHART-maintenance:
+    type: CHART
+    id: CHART-maintenance
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-maintenance
+    meta:
+      chartId: 11
+      width: 12
+      height: 34
+      sliceName: Maintenance-report context (full source)
+  ROW-quality:
+    type: ROW
+    id: ROW-quality
+    children:
+    - CHART-quality
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      background: BACKGROUND_TRANSPARENT
+  CHART-quality:
+    type: CHART
+    id: CHART-quality
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-quality
+    meta:
+      chartId: 12
+      width: 12
+      height: 24
+      sliceName: Data quality and reconciliation (full source)
+  ROW-provenance:
+    type: ROW
+    id: ROW-provenance
+    children:
+    - CHART-provenance
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      background: BACKGROUND_TRANSPARENT
+  CHART-provenance:
+    type: CHART
+    id: CHART-provenance
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-provenance
+    meta:
+      chartId: 13
+      width: 12
+      height: 24
+      sliceName: Source period and pipeline provenance (full source)
+  ROW-N-OUZAS5U4:
+    children:
+    - CHART-WA313ZTV
+    - CHART-K4S63MZ3
+    - CHART-TTVNDCF7
+    - CHART-Z6DK5N90
+    - CHART-FOC7WEI0
+    - CHART-5FIP1ML3
+    - CHART-HOMA47OM
+    - CHART-UYAJUV6R
+    - CHART-40M4BYPC
+    - CHART-5V4N5D0Q
+    - CHART-I1PCA07R
+    - CHART-YUV3KAHH
+    - CHART-09AS3GHC
+    - CHART-O0Q50ZSQ
+    - CHART-PEIMC374
+    - CHART-ZDFVM4R7
+    id: ROW-N-OUZAS5U4
+    meta:
+      '0': ROOT_ID
+      background: BACKGROUND_TRANSPARENT
+    type: ROW
+    parents:
+    - ROOT_ID
+    - GRID_ID
+  CHART-WA313ZTV:
+    children: []
+    id: CHART-WA313ZTV
+    meta:
+      chartId: 6
+      height: 50
+      sliceName: Daily oil temperature (C)
+      uuid: 4dcf3f1b-8875-4561-86b7-103be16692d1
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-OUZAS5U4
+  CHART-K4S63MZ3:
+    children: []
+    id: CHART-K4S63MZ3
+    meta:
+      chartId: 2
+      height: 50
+      sliceName: Candidate investigation hours
+      uuid: 50cd4cc9-d83c-4955-93f3-9f97130f00a1
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-OUZAS5U4
+  CHART-TTVNDCF7:
+    children: []
+    id: CHART-TTVNDCF7
+    meta:
+      chartId: 14
+      height: 50
+      sliceName: Eligible observed hours (%)
+      uuid: 5d741dc0-6239-4f3a-9414-3ade57ce0c4b
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-OUZAS5U4
+  CHART-Z6DK5N90:
+    children: []
+    id: CHART-Z6DK5N90
+    meta:
+      chartId: 10
+      height: 50
+      sliceName: Incident investigation queue (start-date filter)
+      uuid: a9033559-00ed-4c31-88d3-58a4cc2d31f7
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-OUZAS5U4
+  CHART-FOC7WEI0:
+    children: []
+    id: CHART-FOC7WEI0
+    meta:
+      chartId: 8
+      height: 50
+      sliceName: Rule evaluation coverage (hours)
+      uuid: dd8d46b9-ab18-487f-b94c-f07963719594
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-OUZAS5U4
+  CHART-5FIP1ML3:
+    children: []
+    id: CHART-5FIP1ML3
+    meta:
+      chartId: 11
+      height: 50
+      sliceName: Maintenance-report context (full source)
+      uuid: f26d1ff3-6e1e-4239-9d19-fdd28f02b095
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-OUZAS5U4
+  CHART-HOMA47OM:
+    children: []
+    id: CHART-HOMA47OM
+    meta:
+      chartId: 15
+      height: 50
+      sliceName: Not evaluated hours
+      uuid: c633f182-7107-459a-9360-f41bd36172d0
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-OUZAS5U4
+  CHART-UYAJUV6R:
+    children: []
+    id: CHART-UYAJUV6R
+    meta:
+      chartId: 4
+      height: 50
+      sliceName: Rule-eligible hours
+      uuid: 458c1a6e-554b-4f3e-9bcc-b90b949d5d1a
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-OUZAS5U4
+  CHART-40M4BYPC:
+    children: []
+    id: CHART-40M4BYPC
+    meta:
+      chartId: 9
+      height: 50
+      sliceName: Hourly low-pressure share, historical baseline and rule (%)
+      uuid: e03cea1c-fa16-4954-bc40-5a274100f6e8
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-OUZAS5U4
+  CHART-5V4N5D0Q:
+    children: []
+    id: CHART-5V4N5D0Q
+    meta:
+      chartId: 5
+      height: 50
+      sliceName: Daily panel pressure (bar)
+      uuid: ca865e07-45b1-40bc-a9a5-ee58f2bc58de
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-OUZAS5U4
+  CHART-I1PCA07R:
+    children: []
+    id: CHART-I1PCA07R
+    meta:
+      chartId: 7
+      height: 50
+      sliceName: Operating-state observations
+      uuid: 2e7241fe-7958-47d0-88c4-12c5ac4cea13
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-OUZAS5U4
+  CHART-YUV3KAHH:
+    children: []
+    id: CHART-YUV3KAHH
+    meta:
+      chartId: 12
+      height: 50
+      sliceName: Data quality and reconciliation (full source)
+      uuid: c2da2fce-9415-40a8-a12c-6c99f01990f0
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-OUZAS5U4
+  CHART-09AS3GHC:
+    children: []
+    id: CHART-09AS3GHC
+    meta:
+      chartId: 13
+      height: 50
+      sliceName: Source period and pipeline provenance (full source)
+      uuid: 6a04722b-02d4-495e-98c2-f3d1d4aa29ac
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-OUZAS5U4
+  CHART-O0Q50ZSQ:
+    children: []
+    id: CHART-O0Q50ZSQ
+    meta:
+      chartId: 1
+      height: 50
+      sliceName: Observations
+      uuid: a83fc53c-39ef-4c12-aee6-4639ecd50e92
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-OUZAS5U4
+  CHART-PEIMC374:
+    children: []
+    id: CHART-PEIMC374
+    meta:
+      chartId: 16
+      height: 50
+      sliceName: Why hours were not evaluated (exclusive counts)
+      uuid: d0a09f1b-cb60-4d58-8e18-165c6e5f8b85
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-OUZAS5U4
+  CHART-ZDFVM4R7:
+    children: []
+    id: CHART-ZDFVM4R7
+    meta:
+      chartId: 3
+      height: 50
+      sliceName: Candidate incidents
+      uuid: baafafed-e2d6-483c-bfd0-80ad9fcaadce
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-OUZAS5U4
+metadata:
+  refresh_frequency: 0
+  timed_refresh_immune_slices: []
+  color_scheme: supersetColors
+  native_filter_configuration:
+  - id: NATIVE_FILTER-assetpulse-time
+    name: Recorded observation period
+    filterType: filter_time
+    targets:
+    - {}
+    defaultDataMask:
+      extraFormData:
+        time_range: '2020-02-01 : 2020-09-02'
+      filterState:
+        value: '2020-02-01 : 2020-09-02'
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded:
+      - 11
+      - 12
+      - 13
+    controlValues: {}
+    type: NATIVE_FILTER
+    description: Historical 2020 source. Report and quality sections always use full-source
+      context.
+  expanded_slices: {}
+  label_colors: {}
+  shared_label_colors: {}
+  color_scheme_domain: []
+  cross_filters_enabled: true
+version: 1.0.0

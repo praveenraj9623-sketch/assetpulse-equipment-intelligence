@@ -1,0 +1,191 @@
+{
+  "reconciliation": [
+    {
+      "observed_hours": 4416,
+      "eligible_hours": 186,
+      "eligibility_percentage": 4.211956521739131,
+      "not_evaluated_hours": 4230,
+      "evaluated_no_breach": 186,
+      "evaluated_breach": 0,
+      "current_only": 4204,
+      "baseline_only": 0,
+      "both": 26,
+      "zero_current_loaded": 401,
+      "current_loaded_1_to_29": 3829,
+      "null_prior_counts": 1,
+      "null_current_rate": 401,
+      "null_prior_rate": 1,
+      "eligible_null_rate": 0,
+      "complete_prior_hour_windows": 9,
+      "first_hour": "2020-02-01T00:00:00",
+      "last_hour": "2020-09-01T03:00:00"
+    }
+  ],
+  "exclusion_periods": [
+    {
+      "exclusion_reason": "Both: current <30 and prior <300",
+      "hours": 26,
+      "first_hour": "2020-02-01T00:00:00",
+      "last_hour": "2020-02-02T08:00:00"
+    },
+    {
+      "exclusion_reason": "Current only: loaded observations <30",
+      "hours": 4204,
+      "first_hour": "2020-02-02T09:00:00",
+      "last_hour": "2020-09-01T03:00:00"
+    },
+    {
+      "exclusion_reason": "None: evaluated",
+      "hours": 186,
+      "first_hour": "2020-03-03T18:00:00",
+      "last_hour": "2020-08-30T21:00:00"
+    }
+  ],
+  "independent_raw_window_reconciliation": [
+    {
+      "compared_hours": 4416,
+      "mismatched_hours": 0,
+      "mismatched_eligibility": 0
+    }
+  ],
+  "cadence_and_order": [
+    {
+      "observations": 1516948,
+      "duplicate_timestamps": 0,
+      "source_order_reversals": 0,
+      "median_interval_seconds": 10.0,
+      "gaps_over_20_seconds": 351,
+      "largest_gap_seconds": 172918.0
+    }
+  ],
+  "hourly_sample_distribution": [
+    {
+      "loaded_percentiles": [
+        0,
+        11,
+        17,
+        21,
+        25,
+        29,
+        147
+      ],
+      "total_percentiles": [
+        1,
+        363,
+        363,
+        363,
+        364
+      ],
+      "excluded_current_despite_350_total_samples": 3636,
+      "incomplete_prior_windows": 4407,
+      "eligible_despite_incomplete_prior_window": 186
+    }
+  ],
+  "largest_gaps": [
+    {
+      "previous_at": "2020-04-25T01:10:51",
+      "observed_at": "2020-04-27T01:12:49",
+      "gap_seconds": 172918.0
+    },
+    {
+      "previous_at": "2020-06-27T10:53:07",
+      "observed_at": "2020-06-28T23:07:43",
+      "gap_seconds": 130476.0
+    },
+    {
+      "previous_at": "2020-02-28T23:57:08",
+      "observed_at": "2020-03-01T04:00:09",
+      "gap_seconds": 100981.0
+    },
+    {
+      "previous_at": "2020-08-04T07:42:28",
+      "observed_at": "2020-08-05T08:23:01",
+      "gap_seconds": 88833.0
+    },
+    {
+      "previous_at": "2020-05-24T00:39:23",
+      "observed_at": "2020-05-25T01:14:14",
+      "gap_seconds": 88491.0
+    },
+    {
+      "previous_at": "2020-07-07T15:24:51",
+      "observed_at": "2020-07-08T15:20:51",
+      "gap_seconds": 86160.0
+    },
+    {
+      "previous_at": "2020-08-22T19:11:44",
+      "observed_at": "2020-08-23T18:51:01",
+      "gap_seconds": 85157.0
+    },
+    {
+      "previous_at": "2020-05-10T00:31:17",
+      "observed_at": "2020-05-10T22:48:58",
+      "gap_seconds": 80261.0
+    },
+    {
+      "previous_at": "2020-06-07T14:19:39",
+      "observed_at": "2020-06-08T11:48:04",
+      "gap_seconds": 77305.0
+    },
+    {
+      "previous_at": "2020-04-01T13:15:40",
+      "observed_at": "2020-04-02T09:59:17",
+      "gap_seconds": 74617.0
+    }
+  ],
+  "proxy_comparison": [
+    {
+      "dv_electric": 0,
+      "comp": 0,
+      "observations": 10226,
+      "current_loaded": 0,
+      "current_loaded_low_pressure": 0,
+      "min_current_a": 0.0375000000000005,
+      "max_current_a": 5.575000000000001,
+      "mean_current_a": 2.692347203207492
+    },
+    {
+      "dv_electric": 0,
+      "comp": 1,
+      "observations": 1263084,
+      "current_loaded": 279,
+      "current_loaded_low_pressure": 0,
+      "min_current_a": 0.0199999999999995,
+      "max_current_a": 8.6775,
+      "mean_current_a": 1.344704766267836
+    },
+    {
+      "dv_electric": 1,
+      "comp": 0,
+      "observations": 237102,
+      "current_loaded": 71372,
+      "current_loaded_low_pressure": 0,
+      "min_current_a": 0.0199999999999995,
+      "max_current_a": 9.295,
+      "mean_current_a": 5.729353685334551
+    },
+    {
+      "dv_electric": 1,
+      "comp": 1,
+      "observations": 6536,
+      "current_loaded": 13,
+      "current_loaded_low_pressure": 0,
+      "min_current_a": 0.0349999999999992,
+      "max_current_a": 8.315,
+      "mean_current_a": 3.909771266829855
+    }
+  ],
+  "core_nulls_and_integrity": [
+    {
+      "null_rule_inputs": 0,
+      "current_proxy_loaded_observations": 71664,
+      "valve_loaded_observations": 243638,
+      "agreeing_loaded_observations": 71385,
+      "proxy_only_observations": 279,
+      "valve_only_observations": 172253,
+      "rule_low_pressure_observations": 0
+    }
+  ],
+  "verified_at": "2026-09-28T18:00:09.591875+00:00",
+  "source_sql": "sql/07_rule_eligibility_audit.sql"
+}

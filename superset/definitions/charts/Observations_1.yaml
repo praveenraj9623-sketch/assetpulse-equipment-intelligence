@@ -1,0 +1,45 @@
+slice_name: Observations
+description: ''
+certified_by: null
+certification_details: null
+viz_type: big_number_total
+params:
+  datasource: 1__table
+  viz_type: big_number_total
+  time_range: '2020-02-01 : 2020-09-02'
+  granularity_sqla: hour_ts
+  time_grain_sqla: P1D
+  adhoc_filters: []
+  row_limit: 10000
+  metrics:
+  - Observations
+  groupby: []
+  color_scheme: supersetColors
+  show_legend: true
+  legendType: scroll
+  legendOrientation: top
+  rich_tooltip: true
+  tooltipTimeFormat: '%Y-%m-%d %H:%M'
+  y_axis_format: ',.0f'
+  x_axis_time_format: '%b %d'
+  truncateYAxis: false
+  metric: Observations
+  subheader: ''
+  header_font_size: 0.35
+  slice_id: 1
+query_context: '{"datasource": {"id": 1, "type": "table"}, "force": true, "queries":
+  [{"time_range": "2020-02-01 : 2020-09-02", "granularity": "hour_ts", "filters":
+  [], "metrics": ["Observations"], "columns": [], "row_limit": 10000, "orderby": [],
+  "is_timeseries": false, "extras": {"time_grain_sqla": "P1D", "having": "", "where":
+  ""}}], "form_data": {"datasource": "1__table", "viz_type": "big_number_total", "time_range":
+  "2020-02-01 : 2020-09-02", "granularity_sqla": "hour_ts", "time_grain_sqla": "P1D",
+  "adhoc_filters": [], "row_limit": 10000, "metrics": ["Observations"], "groupby":
+  [], "color_scheme": "supersetColors", "show_legend": true, "legendType": "scroll",
+  "legendOrientation": "top", "rich_tooltip": true, "tooltipTimeFormat": "%Y-%m-%d
+  %H:%M", "y_axis_format": ",.0f", "x_axis_time_format": "%b %d", "truncateYAxis":
+  false, "metric": "Observations", "subheader": "", "header_font_size": 0.35, "slice_id":
+  1}, "result_format": "json", "result_type": "full"}'
+cache_timeout: 0
+uuid: a83fc53c-39ef-4c12-aee6-4639ecd50e92
+version: 1.0.0
+dataset_uuid: 226b6705-cf7d-4699-9593-827746ccb247

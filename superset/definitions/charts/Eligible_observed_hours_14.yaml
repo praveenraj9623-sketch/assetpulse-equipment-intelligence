@@ -1,0 +1,46 @@
+slice_name: Eligible observed hours (%)
+description: Eligible / all observed hours in the selected period; excluded hours
+  are not no-breach results.
+certified_by: null
+certification_details: null
+viz_type: big_number_total
+params:
+  datasource: 3__table
+  viz_type: big_number_total
+  time_range: '2020-02-01 : 2020-09-02'
+  granularity_sqla: hour_ts
+  time_grain_sqla: P1D
+  adhoc_filters: []
+  row_limit: 10000
+  metrics:
+  - Eligibility (%)
+  groupby: []
+  color_scheme: supersetColors
+  show_legend: true
+  legendType: scroll
+  legendOrientation: top
+  rich_tooltip: true
+  tooltipTimeFormat: '%Y-%m-%d %H:%M'
+  y_axis_format: .2f
+  x_axis_time_format: '%b %d'
+  truncateYAxis: false
+  metric: Eligibility (%)
+  subheader: ''
+  header_font_size: 0.35
+  slice_id: 14
+query_context: '{"datasource": {"id": 3, "type": "table"}, "force": true, "queries":
+  [{"time_range": "2020-02-01 : 2020-09-02", "granularity": "hour_ts", "filters":
+  [], "metrics": ["Eligibility (%)"], "columns": [], "row_limit": 10000, "orderby":
+  [], "is_timeseries": false, "extras": {"time_grain_sqla": "P1D", "having": "", "where":
+  ""}}], "form_data": {"datasource": "3__table", "viz_type": "big_number_total", "time_range":
+  "2020-02-01 : 2020-09-02", "granularity_sqla": "hour_ts", "time_grain_sqla": "P1D",
+  "adhoc_filters": [], "row_limit": 10000, "metrics": ["Eligibility (%)"], "groupby":
+  [], "color_scheme": "supersetColors", "show_legend": true, "legendType": "scroll",
+  "legendOrientation": "top", "rich_tooltip": true, "tooltipTimeFormat": "%Y-%m-%d
+  %H:%M", "y_axis_format": ".2f", "x_axis_time_format": "%b %d", "truncateYAxis":
+  false, "metric": "Eligibility (%)", "subheader": "", "header_font_size": 0.35, "slice_id":
+  14}, "result_format": "json", "result_type": "full"}'
+cache_timeout: 0
+uuid: 5d741dc0-6239-4f3a-9414-3ade57ce0c4b
+version: 1.0.0
+dataset_uuid: 646e06b4-2d83-4934-aa7a-307954a253ec

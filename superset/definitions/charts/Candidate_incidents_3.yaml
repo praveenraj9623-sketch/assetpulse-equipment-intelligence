@@ -1,0 +1,45 @@
+slice_name: Candidate incidents
+description: ''
+certified_by: null
+certification_details: null
+viz_type: big_number_total
+params:
+  datasource: 4__table
+  viz_type: big_number_total
+  time_range: '2020-02-01 : 2020-09-02'
+  granularity_sqla: starts_at
+  time_grain_sqla: P1D
+  adhoc_filters: []
+  row_limit: 10000
+  metrics:
+  - Candidate incidents
+  groupby: []
+  color_scheme: supersetColors
+  show_legend: true
+  legendType: scroll
+  legendOrientation: top
+  rich_tooltip: true
+  tooltipTimeFormat: '%Y-%m-%d %H:%M'
+  y_axis_format: ',.0f'
+  x_axis_time_format: '%b %d'
+  truncateYAxis: false
+  metric: Candidate incidents
+  subheader: ''
+  header_font_size: 0.35
+  slice_id: 3
+query_context: '{"datasource": {"id": 4, "type": "table"}, "force": true, "queries":
+  [{"time_range": "2020-02-01 : 2020-09-02", "granularity": "starts_at", "filters":
+  [], "metrics": ["Candidate incidents"], "columns": [], "row_limit": 10000, "orderby":
+  [], "is_timeseries": false, "extras": {"time_grain_sqla": "P1D", "having": "", "where":
+  ""}}], "form_data": {"datasource": "4__table", "viz_type": "big_number_total", "time_range":
+  "2020-02-01 : 2020-09-02", "granularity_sqla": "starts_at", "time_grain_sqla": "P1D",
+  "adhoc_filters": [], "row_limit": 10000, "metrics": ["Candidate incidents"], "groupby":
+  [], "color_scheme": "supersetColors", "show_legend": true, "legendType": "scroll",
+  "legendOrientation": "top", "rich_tooltip": true, "tooltipTimeFormat": "%Y-%m-%d
+  %H:%M", "y_axis_format": ",.0f", "x_axis_time_format": "%b %d", "truncateYAxis":
+  false, "metric": "Candidate incidents", "subheader": "", "header_font_size": 0.35,
+  "slice_id": 3}, "result_format": "json", "result_type": "full"}'
+cache_timeout: 0
+uuid: baafafed-e2d6-483c-bfd0-80ad9fcaadce
+version: 1.0.0
+dataset_uuid: 7a2f18f5-4dae-42a5-8662-70285669e466

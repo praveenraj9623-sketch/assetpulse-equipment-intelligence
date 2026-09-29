@@ -1,0 +1,47 @@
+slice_name: Operating-state observations
+description: Current-based proxies, including possible startup transients; UCI supports
+  typical states, not exact threshold validation. Counts are not time-in-state or
+  downtime.
+certified_by: null
+certification_details: null
+viz_type: echarts_timeseries_bar
+params:
+  datasource: 6__table
+  viz_type: echarts_timeseries_bar
+  time_range: '2020-02-01 : 2020-09-02'
+  granularity_sqla: hour_ts
+  time_grain_sqla: P1D
+  adhoc_filters: []
+  row_limit: 10000
+  metrics:
+  - State observations
+  groupby: []
+  color_scheme: supersetColors
+  show_legend: true
+  legendType: scroll
+  legendOrientation: top
+  rich_tooltip: true
+  tooltipTimeFormat: '%Y-%m-%d %H:%M'
+  y_axis_format: ',.0f'
+  x_axis_time_format: '%b %d'
+  truncateYAxis: false
+  x_axis: operating_state
+  orientation: horizontal
+  showValue: true
+  slice_id: 7
+query_context: '{"datasource": {"id": 6, "type": "table"}, "force": true, "queries":
+  [{"time_range": "2020-02-01 : 2020-09-02", "granularity": "hour_ts", "filters":
+  [], "metrics": ["State observations"], "columns": ["operating_state"], "row_limit":
+  10000, "orderby": [], "is_timeseries": false, "extras": {"time_grain_sqla": "P1D",
+  "having": "", "where": ""}}], "form_data": {"datasource": "6__table", "viz_type":
+  "echarts_timeseries_bar", "time_range": "2020-02-01 : 2020-09-02", "granularity_sqla":
+  "hour_ts", "time_grain_sqla": "P1D", "adhoc_filters": [], "row_limit": 10000, "metrics":
+  ["State observations"], "groupby": [], "color_scheme": "supersetColors", "show_legend":
+  true, "legendType": "scroll", "legendOrientation": "top", "rich_tooltip": true,
+  "tooltipTimeFormat": "%Y-%m-%d %H:%M", "y_axis_format": ",.0f", "x_axis_time_format":
+  "%b %d", "truncateYAxis": false, "x_axis": "operating_state", "orientation": "horizontal",
+  "showValue": true, "slice_id": 7}, "result_format": "json", "result_type": "full"}'
+cache_timeout: 0
+uuid: 2e7241fe-7958-47d0-88c4-12c5ac4cea13
+version: 1.0.0
+dataset_uuid: 42505410-d205-43f0-8390-69fd19ac4a29

@@ -1,0 +1,558 @@
+{
+  "started_at": "2026-09-29T02:18:22.185826+00:00",
+  "manual_task_dispatch": false,
+  "negative_condition": {
+    "time": "2026-09-29T02:19:08.732358+00:00",
+    "reports": [
+      {
+        "id": 2,
+        "name": "AssetPulse HISTORICAL ONLY - candidate rule (disabled)",
+        "active": false,
+        "last_state": "Not triggered",
+        "last_value": null,
+        "grace_period": 86400,
+        "logs": []
+      },
+      {
+        "id": 1,
+        "name": "AssetPulse TEST ONLY - local deterministic fixture",
+        "active": true,
+        "last_state": "Not triggered",
+        "last_value": 0.0,
+        "grace_period": 120,
+        "logs": [
+          {
+            "id": 1,
+            "scheduled": "2026-09-29 02:19:00",
+            "start": "2026-09-29 02:19:02.575235",
+            "end": "2026-09-29 02:19:02.580032",
+            "state": "Working",
+            "value": null,
+            "error": null
+          },
+          {
+            "id": 2,
+            "scheduled": "2026-09-29 02:19:00",
+            "start": "2026-09-29 02:19:02.575235",
+            "end": "2026-09-29 02:19:02.676822",
+            "state": "Not triggered",
+            "value": 0.0,
+            "error": null
+          }
+        ]
+      }
+    ]
+  },
+  "first_delivery": {
+    "time": "2026-09-29T02:20:03.436986+00:00",
+    "reports": [
+      {
+        "id": 2,
+        "name": "AssetPulse HISTORICAL ONLY - candidate rule (disabled)",
+        "active": false,
+        "last_state": "Not triggered",
+        "last_value": null,
+        "grace_period": 86400,
+        "logs": []
+      },
+      {
+        "id": 1,
+        "name": "AssetPulse TEST ONLY - local deterministic fixture",
+        "active": true,
+        "last_state": "Success",
+        "last_value": 1.0,
+        "grace_period": 120,
+        "logs": [
+          {
+            "id": 1,
+            "scheduled": "2026-09-29 02:19:00",
+            "start": "2026-09-29 02:19:02.575235",
+            "end": "2026-09-29 02:19:02.580032",
+            "state": "Working",
+            "value": null,
+            "error": null
+          },
+          {
+            "id": 2,
+            "scheduled": "2026-09-29 02:19:00",
+            "start": "2026-09-29 02:19:02.575235",
+            "end": "2026-09-29 02:19:02.676822",
+            "state": "Not triggered",
+            "value": 0.0,
+            "error": null
+          },
+          {
+            "id": 3,
+            "scheduled": "2026-09-29 02:20:00",
+            "start": "2026-09-29 02:20:02.655800",
+            "end": "2026-09-29 02:20:02.660088",
+            "state": "Working",
+            "value": null,
+            "error": null
+          },
+          {
+            "id": 4,
+            "scheduled": "2026-09-29 02:20:00",
+            "start": "2026-09-29 02:20:02.655800",
+            "end": "2026-09-29 02:20:02.706374",
+            "state": "Success",
+            "value": 1.0,
+            "error": null
+          }
+        ]
+      }
+    ]
+  },
+  "grace_suppression": {
+    "time": "2026-09-29T02:21:08.231423+00:00",
+    "reports": [
+      {
+        "id": 2,
+        "name": "AssetPulse HISTORICAL ONLY - candidate rule (disabled)",
+        "active": false,
+        "last_state": "Not triggered",
+        "last_value": null,
+        "grace_period": 86400,
+        "logs": []
+      },
+      {
+        "id": 1,
+        "name": "AssetPulse TEST ONLY - local deterministic fixture",
+        "active": true,
+        "last_state": "On Grace",
+        "last_value": 1.0,
+        "grace_period": 120,
+        "logs": [
+          {
+            "id": 1,
+            "scheduled": "2026-09-29 02:19:00",
+            "start": "2026-09-29 02:19:02.575235",
+            "end": "2026-09-29 02:19:02.580032",
+            "state": "Working",
+            "value": null,
+            "error": null
+          },
+          {
+            "id": 2,
+            "scheduled": "2026-09-29 02:19:00",
+            "start": "2026-09-29 02:19:02.575235",
+            "end": "2026-09-29 02:19:02.676822",
+            "state": "Not triggered",
+            "value": 0.0,
+            "error": null
+          },
+          {
+            "id": 3,
+            "scheduled": "2026-09-29 02:20:00",
+            "start": "2026-09-29 02:20:02.655800",
+            "end": "2026-09-29 02:20:02.660088",
+            "state": "Working",
+            "value": null,
+            "error": null
+          },
+          {
+            "id": 4,
+            "scheduled": "2026-09-29 02:20:00",
+            "start": "2026-09-29 02:20:02.655800",
+            "end": "2026-09-29 02:20:02.706374",
+            "state": "Success",
+            "value": 1.0,
+            "error": null
+          },
+          {
+            "id": 5,
+            "scheduled": "2026-09-29 02:21:00",
+            "start": "2026-09-29 02:21:02.723192",
+            "end": "2026-09-29 02:21:02.728216",
+            "state": "On Grace",
+            "value": 1.0,
+            "error": "Alert fired during grace period."
+          }
+        ]
+      }
+    ],
+    "validation": null
+  },
+  "repeat_delivery": {
+    "time": "2026-09-29T02:23:06.175593+00:00",
+    "reports": [
+      {
+        "id": 2,
+        "name": "AssetPulse HISTORICAL ONLY - candidate rule (disabled)",
+        "active": false,
+        "last_state": "Not triggered",
+        "last_value": null,
+        "grace_period": 86400,
+        "logs": []
+      },
+      {
+        "id": 1,
+        "name": "AssetPulse TEST ONLY - local deterministic fixture",
+        "active": true,
+        "last_state": "Success",
+        "last_value": 1.0,
+        "grace_period": 120,
+        "logs": [
+          {
+            "id": 1,
+            "scheduled": "2026-09-29 02:19:00",
+            "start": "2026-09-29 02:19:02.575235",
+            "end": "2026-09-29 02:19:02.580032",
+            "state": "Working",
+            "value": null,
+            "error": null
+          },
+          {
+            "id": 2,
+            "scheduled": "2026-09-29 02:19:00",
+            "start": "2026-09-29 02:19:02.575235",
+            "end": "2026-09-29 02:19:02.676822",
+            "state": "Not triggered",
+            "value": 0.0,
+            "error": null
+          },
+          {
+            "id": 3,
+            "scheduled": "2026-09-29 02:20:00",
+            "start": "2026-09-29 02:20:02.655800",
+            "end": "2026-09-29 02:20:02.660088",
+            "state": "Working",
+            "value": null,
+            "error": null
+          },
+          {
+            "id": 4,
+            "scheduled": "2026-09-29 02:20:00",
+            "start": "2026-09-29 02:20:02.655800",
+            "end": "2026-09-29 02:20:02.706374",
+            "state": "Success",
+            "value": 1.0,
+            "error": null
+          },
+          {
+            "id": 5,
+            "scheduled": "2026-09-29 02:21:00",
+            "start": "2026-09-29 02:21:02.723192",
+            "end": "2026-09-29 02:21:02.728216",
+            "state": "On Grace",
+            "value": 1.0,
+            "error": "Alert fired during grace period."
+          },
+          {
+            "id": 6,
+            "scheduled": "2026-09-29 02:22:00",
+            "start": "2026-09-29 02:22:02.519483",
+            "end": "2026-09-29 02:22:02.524696",
+            "state": "On Grace",
+            "value": 1.0,
+            "error": "Alert fired during grace period."
+          },
+          {
+            "id": 7,
+            "scheduled": "2026-09-29 02:23:00",
+            "start": "2026-09-29 02:23:02.770789",
+            "end": "2026-09-29 02:23:02.775352",
+            "state": "Working",
+            "value": null,
+            "error": null
+          },
+          {
+            "id": 8,
+            "scheduled": "2026-09-29 02:23:00",
+            "start": "2026-09-29 02:23:02.770789",
+            "end": "2026-09-29 02:23:02.806254",
+            "state": "Success",
+            "value": 1.0,
+            "error": null
+          }
+        ]
+      }
+    ],
+    "validation": null
+  },
+  "messages": [
+    {
+      "ID": "RzgMNta7vfoXnxiVxRz3An",
+      "Subject": "[Report]  AssetPulse TEST ONLY - local deterministic fixture: AssetPulse Equipment Intelligence",
+      "Created": "2026-09-29T02:23:02.8Z",
+      "To": [
+        {
+          "Name": "",
+          "Address": "assetpulse-test@local.test"
+        }
+      ]
+    },
+    {
+      "ID": "8AAndDTXgrs63GGDxdXaoi",
+      "Subject": "[Report]  AssetPulse TEST ONLY - local deterministic fixture: AssetPulse Equipment Intelligence",
+      "Created": "2026-09-29T02:20:02.697Z",
+      "To": [
+        {
+          "Name": "",
+          "Address": "assetpulse-test@local.test"
+        }
+      ]
+    }
+  ],
+  "passed": true,
+  "disabled_status": {
+    "time": "2026-09-29T02:23:12.358310+00:00",
+    "reports": [
+      {
+        "id": 2,
+        "name": "AssetPulse HISTORICAL ONLY - candidate rule (disabled)",
+        "active": false,
+        "last_state": "Not triggered",
+        "last_value": null,
+        "grace_period": 86400,
+        "logs": []
+      },
+      {
+        "id": 1,
+        "name": "AssetPulse TEST ONLY - local deterministic fixture",
+        "active": false,
+        "last_state": "Success",
+        "last_value": 1.0,
+        "grace_period": 120,
+        "logs": [
+          {
+            "id": 1,
+            "scheduled": "2026-09-29 02:19:00",
+            "start": "2026-09-29 02:19:02.575235",
+            "end": "2026-09-29 02:19:02.580032",
+            "state": "Working",
+            "value": null,
+            "error": null
+          },
+          {
+            "id": 2,
+            "scheduled": "2026-09-29 02:19:00",
+            "start": "2026-09-29 02:19:02.575235",
+            "end": "2026-09-29 02:19:02.676822",
+            "state": "Not triggered",
+            "value": 0.0,
+            "error": null
+          },
+          {
+            "id": 3,
+            "scheduled": "2026-09-29 02:20:00",
+            "start": "2026-09-29 02:20:02.655800",
+            "end": "2026-09-29 02:20:02.660088",
+            "state": "Working",
+            "value": null,
+            "error": null
+          },
+          {
+            "id": 4,
+            "scheduled": "2026-09-29 02:20:00",
+            "start": "2026-09-29 02:20:02.655800",
+            "end": "2026-09-29 02:20:02.706374",
+            "state": "Success",
+            "value": 1.0,
+            "error": null
+          },
+          {
+            "id": 5,
+            "scheduled": "2026-09-29 02:21:00",
+            "start": "2026-09-29 02:21:02.723192",
+            "end": "2026-09-29 02:21:02.728216",
+            "state": "On Grace",
+            "value": 1.0,
+            "error": "Alert fired during grace period."
+          },
+          {
+            "id": 6,
+            "scheduled": "2026-09-29 02:22:00",
+            "start": "2026-09-29 02:22:02.519483",
+            "end": "2026-09-29 02:22:02.524696",
+            "state": "On Grace",
+            "value": 1.0,
+            "error": "Alert fired during grace period."
+          },
+          {
+            "id": 7,
+            "scheduled": "2026-09-29 02:23:00",
+            "start": "2026-09-29 02:23:02.770789",
+            "end": "2026-09-29 02:23:02.775352",
+            "state": "Working",
+            "value": null,
+            "error": null
+          },
+          {
+            "id": 8,
+            "scheduled": "2026-09-29 02:23:00",
+            "start": "2026-09-29 02:23:02.770789",
+            "end": "2026-09-29 02:23:02.806254",
+            "state": "Success",
+            "value": 1.0,
+            "error": null
+          }
+        ]
+      }
+    ],
+    "validation": null
+  },
+  "external_email_delivery": "Not configured or tested",
+  "repeat_elapsed_seconds": 180.09988,
+  "preservation": {
+    "historical_counts": {
+      "observed": 4416,
+      "eligible": 186,
+      "breaches": 0
+    },
+    "eligibility_percent": 4.211956521739131,
+    "secret_key_unchanged": true,
+    "metadata_rows_unchanged": {
+      "dashboards": true,
+      "slices": true,
+      "tables": true,
+      "dbs": true,
+      "ab_user": true
+    },
+    "alerts_enabled": true,
+    "smtp_host": "assetpulse-mailpit",
+    "smtp_port": 1025,
+    "dry_run": false
+  },
+  "preservation_after_disclosure_update": {
+    "historical_counts": {
+      "observed": 4416,
+      "eligible": 186,
+      "breaches": 0
+    },
+    "eligibility_percent": 4.211956521739131,
+    "secret_key_unchanged": true,
+    "metadata_rows_unchanged": {
+      "dashboards": true,
+      "slices": true,
+      "tables": true,
+      "dbs": true,
+      "ab_user": true
+    },
+    "alerts_enabled": true,
+    "smtp_host": "assetpulse-mailpit",
+    "smtp_port": 1025,
+    "dry_run": false
+  },
+  "compatibility_regression_tests_passed": 4,
+  "final_validation": {
+    "time": "2026-09-29T02:25:22.423182+00:00",
+    "reports": [
+      {
+        "id": 2,
+        "name": "AssetPulse HISTORICAL ONLY - candidate rule (disabled)",
+        "active": false,
+        "last_state": "Not triggered",
+        "last_value": null,
+        "grace_period": 86400,
+        "logs": []
+      },
+      {
+        "id": 1,
+        "name": "AssetPulse TEST ONLY - local deterministic fixture",
+        "active": false,
+        "last_state": "Success",
+        "last_value": 1.0,
+        "grace_period": 120,
+        "logs": [
+          {
+            "id": 1,
+            "scheduled": "2026-09-29 02:19:00",
+            "start": "2026-09-29 02:19:02.575235",
+            "end": "2026-09-29 02:19:02.580032",
+            "state": "Working",
+            "value": null,
+            "error": null
+          },
+          {
+            "id": 2,
+            "scheduled": "2026-09-29 02:19:00",
+            "start": "2026-09-29 02:19:02.575235",
+            "end": "2026-09-29 02:19:02.676822",
+            "state": "Not triggered",
+            "value": 0.0,
+            "error": null
+          },
+          {
+            "id": 3,
+            "scheduled": "2026-09-29 02:20:00",
+            "start": "2026-09-29 02:20:02.655800",
+            "end": "2026-09-29 02:20:02.660088",
+            "state": "Working",
+            "value": null,
+            "error": null
+          },
+          {
+            "id": 4,
+            "scheduled": "2026-09-29 02:20:00",
+            "start": "2026-09-29 02:20:02.655800",
+            "end": "2026-09-29 02:20:02.706374",
+            "state": "Success",
+            "value": 1.0,
+            "error": null
+          },
+          {
+            "id": 5,
+            "scheduled": "2026-09-29 02:21:00",
+            "start": "2026-09-29 02:21:02.723192",
+            "end": "2026-09-29 02:21:02.728216",
+            "state": "On Grace",
+            "value": 1.0,
+            "error": "Alert fired during grace period."
+          },
+          {
+            "id": 6,
+            "scheduled": "2026-09-29 02:22:00",
+            "start": "2026-09-29 02:22:02.519483",
+            "end": "2026-09-29 02:22:02.524696",
+            "state": "On Grace",
+            "value": 1.0,
+            "error": "Alert fired during grace period."
+          },
+          {
+            "id": 7,
+            "scheduled": "2026-09-29 02:23:00",
+            "start": "2026-09-29 02:23:02.770789",
+            "end": "2026-09-29 02:23:02.775352",
+            "state": "Working",
+            "value": null,
+            "error": null
+          },
+          {
+            "id": 8,
+            "scheduled": "2026-09-29 02:23:00",
+            "start": "2026-09-29 02:23:02.770789",
+            "end": "2026-09-29 02:23:02.806254",
+            "state": "Success",
+            "value": 1.0,
+            "error": null
+          }
+        ]
+      }
+    ],
+    "validation": {
+      "historical_counts": {
+        "observed": 4416,
+        "eligible": 186,
+        "breaches": 0
+      },
+      "eligibility_percent": 4.211956521739131,
+      "secret_key_unchanged": true,
+      "metadata_rows_unchanged": {
+        "dashboards": true,
+        "slices": true,
+        "tables": true,
+        "dbs": true,
+        "ab_user": true
+      },
+      "alerts_enabled": true,
+      "smtp_host": "assetpulse-mailpit",
+      "smtp_port": 1025,
+      "dry_run": false
+    }
+  },
+  "secret_scan_passed": true,
+  "idempotent_setup_and_report_ids_verified": true,
+  "no_new_execution_or_message_after_disable": true,
+  "smtp_capture_screenshot": "evidence/local_smtp_capture.png"
+}

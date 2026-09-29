@@ -1,0 +1,52 @@
+slice_name: Rule evaluation coverage (hours)
+description: ''
+certified_by: null
+certification_details: null
+viz_type: table
+params:
+  datasource: 3__table
+  viz_type: table
+  time_range: '2020-02-01 : 2020-09-02'
+  granularity_sqla: hour_ts
+  time_grain_sqla: P1D
+  adhoc_filters: []
+  row_limit: 10000
+  metrics:
+  - Observed hours
+  groupby:
+  - evaluation_status
+  color_scheme: supersetColors
+  show_legend: true
+  legendType: scroll
+  legendOrientation: top
+  rich_tooltip: true
+  tooltipTimeFormat: '%Y-%m-%d %H:%M'
+  y_axis_format: .2f
+  x_axis_time_format: '%b %d'
+  truncateYAxis: false
+  query_mode: aggregate
+  all_columns: []
+  page_length: 10
+  include_search: false
+  order_desc: false
+  table_timestamp_format: '%Y-%m-%d %H:%M'
+  allow_render_html: false
+  slice_id: 8
+query_context: '{"datasource": {"id": 3, "type": "table"}, "force": true, "queries":
+  [{"time_range": "2020-02-01 : 2020-09-02", "granularity": "hour_ts", "filters":
+  [], "metrics": ["Observed hours"], "columns": ["evaluation_status"], "row_limit":
+  10000, "orderby": [], "is_timeseries": false, "extras": {"time_grain_sqla": "P1D",
+  "having": "", "where": ""}}], "form_data": {"datasource": "3__table", "viz_type":
+  "table", "time_range": "2020-02-01 : 2020-09-02", "granularity_sqla": "hour_ts",
+  "time_grain_sqla": "P1D", "adhoc_filters": [], "row_limit": 10000, "metrics": ["Observed
+  hours"], "groupby": ["evaluation_status"], "color_scheme": "supersetColors", "show_legend":
+  true, "legendType": "scroll", "legendOrientation": "top", "rich_tooltip": true,
+  "tooltipTimeFormat": "%Y-%m-%d %H:%M", "y_axis_format": ".2f", "x_axis_time_format":
+  "%b %d", "truncateYAxis": false, "query_mode": "aggregate", "all_columns": [], "page_length":
+  10, "include_search": false, "order_desc": false, "table_timestamp_format": "%Y-%m-%d
+  %H:%M", "allow_render_html": false, "slice_id": 8}, "result_format": "json", "result_type":
+  "full"}'
+cache_timeout: 0
+uuid: dd8d46b9-ab18-487f-b94c-f07963719594
+version: 1.0.0
+dataset_uuid: 646e06b4-2d83-4934-aa7a-307954a253ec

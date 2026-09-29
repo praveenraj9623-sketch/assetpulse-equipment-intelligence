@@ -1,0 +1,64 @@
+slice_name: Hourly low-pressure share, historical baseline and rule (%)
+description: Low pressure <7 bar among loaded observations >=6 A. Prior seven-day
+  baseline excludes the current hour. Both thresholds and minimum counts (30 current,
+  300 prior) are required. No averaging of overlapping baselines.
+certified_by: null
+certification_details: null
+viz_type: echarts_timeseries_line
+params:
+  datasource: 3__table
+  viz_type: echarts_timeseries_line
+  time_range: '2020-02-01 : 2020-09-02'
+  granularity_sqla: hour_ts
+  time_grain_sqla: PT1H
+  adhoc_filters: []
+  row_limit: 10000
+  metrics:
+  - Low pressure among loaded (%)
+  - Prior 7-day loaded share (%)
+  - Rule floor (%)
+  - 2x prior baseline (%)
+  groupby: []
+  color_scheme: supersetColors
+  show_legend: true
+  legendType: scroll
+  legendOrientation: top
+  rich_tooltip: true
+  tooltipTimeFormat: '%Y-%m-%d %H:%M'
+  y_axis_format: .2f
+  x_axis_time_format: '%b %d'
+  truncateYAxis: false
+  x_axis: hour_ts
+  seriesType: line
+  showValue: false
+  markerEnabled: false
+  zoomable: true
+  connect_nulls: false
+  resample_rule: h
+  resample_method: asfreq
+  slice_id: 9
+query_context: '{"datasource": {"id": 3, "type": "table"}, "force": true, "queries":
+  [{"time_range": "2020-02-01 : 2020-09-02", "granularity": "hour_ts", "filters":
+  [], "metrics": ["Low pressure among loaded (%)", "Prior 7-day loaded share (%)",
+  "Rule floor (%)", "2x prior baseline (%)"], "columns": [], "row_limit": 10000, "orderby":
+  [], "is_timeseries": true, "extras": {"time_grain_sqla": "PT1H", "having": "", "where":
+  ""}, "post_processing": [{"operation": "pivot", "options": {"index": ["__timestamp"],
+  "columns": [], "aggregates": {"Low pressure among loaded (%)": {"operator": "mean"},
+  "Prior 7-day loaded share (%)": {"operator": "mean"}, "Rule floor (%)": {"operator":
+  "mean"}, "2x prior baseline (%)": {"operator": "mean"}}, "drop_missing_columns":
+  false}}, {"operation": "resample", "options": {"rule": "h", "method": "asfreq",
+  "fill_value": null}}, {"operation": "flatten"}]}], "form_data": {"datasource": "3__table",
+  "viz_type": "echarts_timeseries_line", "time_range": "2020-02-01 : 2020-09-02",
+  "granularity_sqla": "hour_ts", "time_grain_sqla": "PT1H", "adhoc_filters": [], "row_limit":
+  10000, "metrics": ["Low pressure among loaded (%)", "Prior 7-day loaded share (%)",
+  "Rule floor (%)", "2x prior baseline (%)"], "groupby": [], "color_scheme": "supersetColors",
+  "show_legend": true, "legendType": "scroll", "legendOrientation": "top", "rich_tooltip":
+  true, "tooltipTimeFormat": "%Y-%m-%d %H:%M", "y_axis_format": ".2f", "x_axis_time_format":
+  "%b %d", "truncateYAxis": false, "x_axis": "hour_ts", "seriesType": "line", "showValue":
+  false, "markerEnabled": false, "zoomable": true, "connect_nulls": false, "resample_rule":
+  "h", "resample_method": "asfreq", "slice_id": 9}, "result_format": "json", "result_type":
+  "full"}'
+cache_timeout: 0
+uuid: e03cea1c-fa16-4954-bc40-5a274100f6e8
+version: 1.0.0
+dataset_uuid: 646e06b4-2d83-4934-aa7a-307954a253ec

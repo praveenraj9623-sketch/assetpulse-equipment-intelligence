@@ -1,0 +1,1 @@
+incident_id,starts_at,ends_at,candidate_hours,readings,loaded_readings,low_pressure_loaded_readings,low_pressure_share,peak_hour_share,overlaps_reported_failure,rule_version

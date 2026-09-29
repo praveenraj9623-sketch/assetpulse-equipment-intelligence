@@ -1,0 +1,65 @@
+table_name: analytics_operating_states
+main_dttm_col: hour_ts
+description: Three operating-state observation counts per observed hour; state thresholds
+  are current proxies.
+default_endpoint: null
+offset: 0
+cache_timeout: 0
+schema: public
+sql: null
+params: null
+template_params: null
+filter_select_enabled: true
+fetch_values_predicate: null
+extra: null
+normalize_columns: false
+uuid: 42505410-d205-43f0-8390-69fd19ac4a29
+metrics:
+- metric_name: State observations
+  verbose_name: State observations
+  metric_type: null
+  expression: COALESCE(SUM(observations), 0)
+  description: Mutually exclusive current-based states; counts reconcile to all observations.
+  d3format: ',.0f'
+  currency: null
+  extra: null
+  warning_text: null
+columns:
+- column_name: hour_ts
+  verbose_name: Hour ts
+  is_dttm: true
+  is_active: true
+  type: TIMESTAMP WITHOUT TIME ZONE
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: operating_state
+  verbose_name: Operating state
+  is_dttm: false
+  is_active: true
+  type: TEXT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: observations
+  verbose_name: Observations
+  is_dttm: false
+  is_active: true
+  type: BIGINT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+version: 1.0.0
+database_uuid: 12e82297-35e6-4aa4-91fd-21caf0c42c06

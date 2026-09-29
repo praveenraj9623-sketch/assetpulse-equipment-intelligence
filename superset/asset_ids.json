@@ -1,0 +1,31 @@
+{
+  "database_id": 1,
+  "dashboard_id": 1,
+  "datasets": {
+    "mart_hourly": 1,
+    "mart_daily": 2,
+    "mart_hourly_investigation": 3,
+    "mart_incidents": 4,
+    "mart_report_review": 5,
+    "analytics_operating_states": 6,
+    "analytics_data_quality": 7
+  },
+  "charts": {
+    "observations": 1,
+    "candidates": 2,
+    "incidents": 3,
+    "eligible": 4,
+    "eligibility_percent": 14,
+    "not_evaluated": 15,
+    "pressure": 5,
+    "temperature": 6,
+    "states": 7,
+    "eligibility": 8,
+    "exclusions": 16,
+    "baseline": 9,
+    "incident_table": 10,
+    "maintenance": 11,
+    "quality": 12,
+    "provenance": 13
+  }
+}

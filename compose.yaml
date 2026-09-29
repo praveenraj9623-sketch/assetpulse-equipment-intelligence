@@ -1,0 +1,47 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: assetpulse
+      POSTGRES_PASSWORD: ${ASSET_DB_PASSWORD:-assetpulse_local_dev}
+      POSTGRES_DB: assetpulse
+    ports:
+        - "127.0.0.1:5434:5432"
+    volumes:
+      - assetpulse_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U assetpulse -d assetpulse"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+  app:
+    build: .
+    image: assetpulse:local
+    ports:
+      - "127.0.0.1:8502:8501"
+    volumes:
+      - ./data/export:/app/data/export:ro
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+  pipeline:
+    build: .
+    image: assetpulse:local
+    profiles: ["refresh"]
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      ASSET_DB_HOST: db
+      ASSET_DB_PORT: "5432"
+      ASSET_DB_PASSWORD: ${ASSET_DB_PASSWORD:-assetpulse_local_dev}
+    volumes:
+      - ./data:/app/data
+    command: ["python", "-m", "src.refresh"]
+    healthcheck:
+      disable: true
+    restart: "no"
+volumes:
+  assetpulse_data:

@@ -1,0 +1,423 @@
+{
+  "verified_at": "2026-09-28T18:03:17.343721+00:00",
+  "dashboard_url": "http://localhost:8089/superset/dashboard/assetpulse-equipment-intelligence/",
+  "read_only_privileges_verified": true,
+  "quality": {
+    "raw_observations": 1516948,
+    "first_observation": "2020-02-01 00:00:00",
+    "last_observation": "2020-09-01 03:59:50",
+    "duplicate_timestamps": 0,
+    "missing_core_sensor_rows": 0,
+    "observed_hours": 4416,
+    "observed_dates": 212,
+    "hourly_observations": "1516948",
+    "state_observations": "1516948",
+    "unobserved_hour_windows": 700,
+    "reconciliation_difference": "0",
+    "state_reconciliation_difference": "0",
+    "original_rows": 1516948,
+    "is_complete_source": true,
+    "pipeline_loaded_at": "2026-09-28 01:00:24.454080+00:00",
+    "source_name": "MetroPT3(AirCompressor).csv",
+    "source_sha256": "db30ccb4ea402e3c8bf2c99db06e288d4f2a772f6928f9dbe26a920d69793e24",
+    "timestamp_context": "Historical source; timestamp timezone unspecified"
+  },
+  "chart_checks": [
+    {
+      "chart": "Observations",
+      "time_range": "2020-02-01 : 2020-09-02",
+      "rows": 1,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT COALESCE(SUM(readings), 0) AS \"Observations\"\nFROM public.mart_hourly\nWHERE hour_ts >= TO_TIMESTAMP('2020-02-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\n  AND hour_ts < TO_TIMESTAMP('2020-09-02 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Observations",
+      "time_range": "2020-04-01 : 2020-05-01",
+      "rows": 1,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT COALESCE(SUM(readings), 0) AS \"Observations\"\nFROM public.mart_hourly\nWHERE hour_ts >= TO_TIMESTAMP('2020-04-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\n  AND hour_ts < TO_TIMESTAMP('2020-05-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Observations",
+      "time_range": "2021-01-01 : 2021-01-02",
+      "rows": 1,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT COALESCE(SUM(readings), 0) AS \"Observations\"\nFROM public.mart_hourly\nWHERE hour_ts >= TO_TIMESTAMP('2021-01-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\n  AND hour_ts < TO_TIMESTAMP('2021-01-02 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Candidate investigation hours",
+      "time_range": "2020-02-01 : 2020-09-02",
+      "rows": 1,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT COUNT(*) FILTER (\n                        WHERE candidate_status = 'REVIEW_PRESSURE') AS \"Candidate hours\"\nFROM public.mart_hourly_investigation\nWHERE hour_ts >= TO_TIMESTAMP('2020-02-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\n  AND hour_ts < TO_TIMESTAMP('2020-09-02 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Candidate investigation hours",
+      "time_range": "2020-04-01 : 2020-05-01",
+      "rows": 1,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT COUNT(*) FILTER (\n                        WHERE candidate_status = 'REVIEW_PRESSURE') AS \"Candidate hours\"\nFROM public.mart_hourly_investigation\nWHERE hour_ts >= TO_TIMESTAMP('2020-04-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\n  AND hour_ts < TO_TIMESTAMP('2020-05-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Candidate investigation hours",
+      "time_range": "2021-01-01 : 2021-01-02",
+      "rows": 1,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT COUNT(*) FILTER (\n                        WHERE candidate_status = 'REVIEW_PRESSURE') AS \"Candidate hours\"\nFROM public.mart_hourly_investigation\nWHERE hour_ts >= TO_TIMESTAMP('2021-01-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\n  AND hour_ts < TO_TIMESTAMP('2021-01-02 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Candidate incidents",
+      "time_range": "2020-02-01 : 2020-09-02",
+      "rows": 1,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT COUNT(*) AS \"Candidate incidents\"\nFROM public.mart_incidents\nWHERE starts_at >= TO_TIMESTAMP('2020-02-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\n  AND starts_at < TO_TIMESTAMP('2020-09-02 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Candidate incidents",
+      "time_range": "2020-04-01 : 2020-05-01",
+      "rows": 1,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT COUNT(*) AS \"Candidate incidents\"\nFROM public.mart_incidents\nWHERE starts_at >= TO_TIMESTAMP('2020-04-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\n  AND starts_at < TO_TIMESTAMP('2020-05-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Candidate incidents",
+      "time_range": "2021-01-01 : 2021-01-02",
+      "rows": 1,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT COUNT(*) AS \"Candidate incidents\"\nFROM public.mart_incidents\nWHERE starts_at >= TO_TIMESTAMP('2021-01-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\n  AND starts_at < TO_TIMESTAMP('2021-01-02 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Rule-eligible hours",
+      "time_range": "2020-02-01 : 2020-09-02",
+      "rows": 1,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT COUNT(*) FILTER (\n                        WHERE rule_eligible) AS \"Eligible hours\"\nFROM public.mart_hourly_investigation\nWHERE hour_ts >= TO_TIMESTAMP('2020-02-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\n  AND hour_ts < TO_TIMESTAMP('2020-09-02 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Rule-eligible hours",
+      "time_range": "2020-04-01 : 2020-05-01",
+      "rows": 1,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT COUNT(*) FILTER (\n                        WHERE rule_eligible) AS \"Eligible hours\"\nFROM public.mart_hourly_investigation\nWHERE hour_ts >= TO_TIMESTAMP('2020-04-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\n  AND hour_ts < TO_TIMESTAMP('2020-05-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Rule-eligible hours",
+      "time_range": "2021-01-01 : 2021-01-02",
+      "rows": 1,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT COUNT(*) FILTER (\n                        WHERE rule_eligible) AS \"Eligible hours\"\nFROM public.mart_hourly_investigation\nWHERE hour_ts >= TO_TIMESTAMP('2021-01-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\n  AND hour_ts < TO_TIMESTAMP('2021-01-02 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Eligible observed hours (%)",
+      "time_range": "2020-02-01 : 2020-09-02",
+      "rows": 1,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT 100.0 * COUNT(*) FILTER (\n                                WHERE rule_eligible) / NULLIF(COUNT(*), 0) AS \"Eligibility (%)\"\nFROM public.mart_hourly_investigation\nWHERE hour_ts >= TO_TIMESTAMP('2020-02-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\n  AND hour_ts < TO_TIMESTAMP('2020-09-02 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Eligible observed hours (%)",
+      "time_range": "2020-04-01 : 2020-05-01",
+      "rows": 1,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT 100.0 * COUNT(*) FILTER (\n                                WHERE rule_eligible) / NULLIF(COUNT(*), 0) AS \"Eligibility (%)\"\nFROM public.mart_hourly_investigation\nWHERE hour_ts >= TO_TIMESTAMP('2020-04-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\n  AND hour_ts < TO_TIMESTAMP('2020-05-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Eligible observed hours (%)",
+      "time_range": "2021-01-01 : 2021-01-02",
+      "rows": 1,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT 100.0 * COUNT(*) FILTER (\n                                WHERE rule_eligible) / NULLIF(COUNT(*), 0) AS \"Eligibility (%)\"\nFROM public.mart_hourly_investigation\nWHERE hour_ts >= TO_TIMESTAMP('2021-01-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\n  AND hour_ts < TO_TIMESTAMP('2021-01-02 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Not evaluated hours",
+      "time_range": "2020-02-01 : 2020-09-02",
+      "rows": 1,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT COUNT(*) FILTER (\n                        WHERE evaluation_status = 'Not evaluated') AS \"Not evaluated hours\"\nFROM public.mart_hourly_investigation\nWHERE hour_ts >= TO_TIMESTAMP('2020-02-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\n  AND hour_ts < TO_TIMESTAMP('2020-09-02 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Not evaluated hours",
+      "time_range": "2020-04-01 : 2020-05-01",
+      "rows": 1,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT COUNT(*) FILTER (\n                        WHERE evaluation_status = 'Not evaluated') AS \"Not evaluated hours\"\nFROM public.mart_hourly_investigation\nWHERE hour_ts >= TO_TIMESTAMP('2020-04-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\n  AND hour_ts < TO_TIMESTAMP('2020-05-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Not evaluated hours",
+      "time_range": "2021-01-01 : 2021-01-02",
+      "rows": 1,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT COUNT(*) FILTER (\n                        WHERE evaluation_status = 'Not evaluated') AS \"Not evaluated hours\"\nFROM public.mart_hourly_investigation\nWHERE hour_ts >= TO_TIMESTAMP('2021-01-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\n  AND hour_ts < TO_TIMESTAMP('2021-01-02 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Daily panel pressure (bar)",
+      "time_range": "2020-02-01 : 2020-09-02",
+      "rows": 212,
+      "null_gap_points": 2,
+      "postgresql_values_match": true,
+      "sql": "SELECT DATE_TRUNC('day', reading_date) AS __timestamp,\n       SUM(avg_panel_pressure_bar * readings) / NULLIF(SUM(readings), 0) AS \"Panel pressure (bar)\"\nFROM public.mart_daily\nWHERE reading_date >= TO_DATE('2020-02-01', 'YYYY-MM-DD')\n  AND reading_date < TO_DATE('2020-09-02', 'YYYY-MM-DD')\nGROUP BY DATE_TRUNC('day', reading_date)\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Daily panel pressure (bar)",
+      "time_range": "2020-04-01 : 2020-05-01",
+      "rows": 29,
+      "null_gap_points": 1,
+      "postgresql_values_match": true,
+      "sql": "SELECT DATE_TRUNC('day', reading_date) AS __timestamp,\n       SUM(avg_panel_pressure_bar * readings) / NULLIF(SUM(readings), 0) AS \"Panel pressure (bar)\"\nFROM public.mart_daily\nWHERE reading_date >= TO_DATE('2020-04-01', 'YYYY-MM-DD')\n  AND reading_date < TO_DATE('2020-05-01', 'YYYY-MM-DD')\nGROUP BY DATE_TRUNC('day', reading_date)\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Daily panel pressure (bar)",
+      "time_range": "2021-01-01 : 2021-01-02",
+      "rows": 0,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT DATE_TRUNC('day', reading_date) AS __timestamp,\n       SUM(avg_panel_pressure_bar * readings) / NULLIF(SUM(readings), 0) AS \"Panel pressure (bar)\"\nFROM public.mart_daily\nWHERE reading_date >= TO_DATE('2021-01-01', 'YYYY-MM-DD')\n  AND reading_date < TO_DATE('2021-01-02', 'YYYY-MM-DD')\nGROUP BY DATE_TRUNC('day', reading_date)\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Daily oil temperature (C)",
+      "time_range": "2020-02-01 : 2020-09-02",
+      "rows": 212,
+      "null_gap_points": 2,
+      "postgresql_values_match": true,
+      "sql": "SELECT DATE_TRUNC('day', reading_date) AS __timestamp,\n       SUM(avg_oil_temperature_c * readings) / NULLIF(SUM(readings), 0) AS \"Oil temperature (C)\"\nFROM public.mart_daily\nWHERE reading_date >= TO_DATE('2020-02-01', 'YYYY-MM-DD')\n  AND reading_date < TO_DATE('2020-09-02', 'YYYY-MM-DD')\nGROUP BY DATE_TRUNC('day', reading_date)\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Daily oil temperature (C)",
+      "time_range": "2020-04-01 : 2020-05-01",
+      "rows": 29,
+      "null_gap_points": 1,
+      "postgresql_values_match": true,
+      "sql": "SELECT DATE_TRUNC('day', reading_date) AS __timestamp,\n       SUM(avg_oil_temperature_c * readings) / NULLIF(SUM(readings), 0) AS \"Oil temperature (C)\"\nFROM public.mart_daily\nWHERE reading_date >= TO_DATE('2020-04-01', 'YYYY-MM-DD')\n  AND reading_date < TO_DATE('2020-05-01', 'YYYY-MM-DD')\nGROUP BY DATE_TRUNC('day', reading_date)\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Daily oil temperature (C)",
+      "time_range": "2021-01-01 : 2021-01-02",
+      "rows": 0,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT DATE_TRUNC('day', reading_date) AS __timestamp,\n       SUM(avg_oil_temperature_c * readings) / NULLIF(SUM(readings), 0) AS \"Oil temperature (C)\"\nFROM public.mart_daily\nWHERE reading_date >= TO_DATE('2021-01-01', 'YYYY-MM-DD')\n  AND reading_date < TO_DATE('2021-01-02', 'YYYY-MM-DD')\nGROUP BY DATE_TRUNC('day', reading_date)\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Operating-state observations",
+      "time_range": "2020-02-01 : 2020-09-02",
+      "rows": 3,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT operating_state AS operating_state,\n       COALESCE(SUM(observations), 0) AS \"State observations\"\nFROM public.analytics_operating_states\nWHERE hour_ts >= TO_TIMESTAMP('2020-02-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\n  AND hour_ts < TO_TIMESTAMP('2020-09-02 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\nGROUP BY operating_state\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Operating-state observations",
+      "time_range": "2020-04-01 : 2020-05-01",
+      "rows": 3,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT operating_state AS operating_state,\n       COALESCE(SUM(observations), 0) AS \"State observations\"\nFROM public.analytics_operating_states\nWHERE hour_ts >= TO_TIMESTAMP('2020-04-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\n  AND hour_ts < TO_TIMESTAMP('2020-05-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\nGROUP BY operating_state\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Operating-state observations",
+      "time_range": "2021-01-01 : 2021-01-02",
+      "rows": 0,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT operating_state AS operating_state,\n       COALESCE(SUM(observations), 0) AS \"State observations\"\nFROM public.analytics_operating_states\nWHERE hour_ts >= TO_TIMESTAMP('2021-01-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\n  AND hour_ts < TO_TIMESTAMP('2021-01-02 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\nGROUP BY operating_state\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Rule evaluation coverage (hours)",
+      "time_range": "2020-02-01 : 2020-09-02",
+      "rows": 2,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT evaluation_status AS evaluation_status,\n       COUNT(*) AS \"Observed hours\"\nFROM public.mart_hourly_investigation\nWHERE hour_ts >= TO_TIMESTAMP('2020-02-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\n  AND hour_ts < TO_TIMESTAMP('2020-09-02 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\nGROUP BY evaluation_status\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Rule evaluation coverage (hours)",
+      "time_range": "2020-04-01 : 2020-05-01",
+      "rows": 2,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT evaluation_status AS evaluation_status,\n       COUNT(*) AS \"Observed hours\"\nFROM public.mart_hourly_investigation\nWHERE hour_ts >= TO_TIMESTAMP('2020-04-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\n  AND hour_ts < TO_TIMESTAMP('2020-05-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\nGROUP BY evaluation_status\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Rule evaluation coverage (hours)",
+      "time_range": "2021-01-01 : 2021-01-02",
+      "rows": 0,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT evaluation_status AS evaluation_status,\n       COUNT(*) AS \"Observed hours\"\nFROM public.mart_hourly_investigation\nWHERE hour_ts >= TO_TIMESTAMP('2021-01-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\n  AND hour_ts < TO_TIMESTAMP('2021-01-02 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\nGROUP BY evaluation_status\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Why hours were not evaluated (exclusive counts)",
+      "time_range": "2020-02-01 : 2020-09-02",
+      "rows": 1,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT COUNT(*) FILTER (\n                        WHERE current_samples_insufficient\n                          AND NOT baseline_samples_insufficient) AS \"Current samples only\",\n       COUNT(*) FILTER (\n                        WHERE baseline_samples_insufficient\n                          AND NOT current_samples_insufficient) AS \"Baseline samples only\",\n       COUNT(*) FILTER (\n                        WHERE current_samples_insufficient\n                          AND baseline_samples_insufficient) AS \"Both sample requirements\",\n       COUNT(*) FILTER (\n                        WHERE NOT current_samples_insufficient\n                          AND NOT baseline_samples_insufficient\n                          AND NOT rule_eligible) AS \"Missing rates\"\nFROM public.mart_hourly_investigation\nWHERE hour_ts >= TO_TIMESTAMP('2020-02-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\n  AND hour_ts < TO_TIMESTAMP('2020-09-02 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Why hours were not evaluated (exclusive counts)",
+      "time_range": "2020-04-01 : 2020-05-01",
+      "rows": 1,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT COUNT(*) FILTER (\n                        WHERE current_samples_insufficient\n                          AND NOT baseline_samples_insufficient) AS \"Current samples only\",\n       COUNT(*) FILTER (\n                        WHERE baseline_samples_insufficient\n                          AND NOT current_samples_insufficient) AS \"Baseline samples only\",\n       COUNT(*) FILTER (\n                        WHERE current_samples_insufficient\n                          AND baseline_samples_insufficient) AS \"Both sample requirements\",\n       COUNT(*) FILTER (\n                        WHERE NOT current_samples_insufficient\n                          AND NOT baseline_samples_insufficient\n                          AND NOT rule_eligible) AS \"Missing rates\"\nFROM public.mart_hourly_investigation\nWHERE hour_ts >= TO_TIMESTAMP('2020-04-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\n  AND hour_ts < TO_TIMESTAMP('2020-05-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Why hours were not evaluated (exclusive counts)",
+      "time_range": "2021-01-01 : 2021-01-02",
+      "rows": 1,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT COUNT(*) FILTER (\n                        WHERE current_samples_insufficient\n                          AND NOT baseline_samples_insufficient) AS \"Current samples only\",\n       COUNT(*) FILTER (\n                        WHERE baseline_samples_insufficient\n                          AND NOT current_samples_insufficient) AS \"Baseline samples only\",\n       COUNT(*) FILTER (\n                        WHERE current_samples_insufficient\n                          AND baseline_samples_insufficient) AS \"Both sample requirements\",\n       COUNT(*) FILTER (\n                        WHERE NOT current_samples_insufficient\n                          AND NOT baseline_samples_insufficient\n                          AND NOT rule_eligible) AS \"Missing rates\"\nFROM public.mart_hourly_investigation\nWHERE hour_ts >= TO_TIMESTAMP('2021-01-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\n  AND hour_ts < TO_TIMESTAMP('2021-01-02 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Hourly low-pressure share, historical baseline and rule (%)",
+      "time_range": "2020-02-01 : 2020-09-02",
+      "rows": 4416,
+      "null_gap_points": 700,
+      "postgresql_values_match": true,
+      "sql": "SELECT DATE_TRUNC('hour', hour_ts) AS __timestamp,\n       100.0 * SUM(low_pressure_loaded_readings) / NULLIF(SUM(loaded_readings), 0) AS \"Low pressure among loaded (%)\",\n       CASE\n           WHEN COUNT(*) = 1 THEN 100.0 * MAX(prior_low_fraction)\n       END AS \"Prior 7-day loaded share (%)\",\n       15.0 AS \"Rule floor (%)\",\n       CASE\n           WHEN COUNT(*) = 1 THEN 200.0 * MAX(prior_low_fraction)\n       END AS \"2x prior baseline (%)\"\nFROM public.mart_hourly_investigation\nWHERE hour_ts >= TO_TIMESTAMP('2020-02-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\n  AND hour_ts < TO_TIMESTAMP('2020-09-02 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\nGROUP BY DATE_TRUNC('hour', hour_ts)\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Hourly low-pressure share, historical baseline and rule (%)",
+      "time_range": "2020-04-01 : 2020-05-01",
+      "rows": 589,
+      "null_gap_points": 131,
+      "postgresql_values_match": true,
+      "sql": "SELECT DATE_TRUNC('hour', hour_ts) AS __timestamp,\n       100.0 * SUM(low_pressure_loaded_readings) / NULLIF(SUM(loaded_readings), 0) AS \"Low pressure among loaded (%)\",\n       CASE\n           WHEN COUNT(*) = 1 THEN 100.0 * MAX(prior_low_fraction)\n       END AS \"Prior 7-day loaded share (%)\",\n       15.0 AS \"Rule floor (%)\",\n       CASE\n           WHEN COUNT(*) = 1 THEN 200.0 * MAX(prior_low_fraction)\n       END AS \"2x prior baseline (%)\"\nFROM public.mart_hourly_investigation\nWHERE hour_ts >= TO_TIMESTAMP('2020-04-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\n  AND hour_ts < TO_TIMESTAMP('2020-05-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\nGROUP BY DATE_TRUNC('hour', hour_ts)\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Hourly low-pressure share, historical baseline and rule (%)",
+      "time_range": "2021-01-01 : 2021-01-02",
+      "rows": 0,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT DATE_TRUNC('hour', hour_ts) AS __timestamp,\n       100.0 * SUM(low_pressure_loaded_readings) / NULLIF(SUM(loaded_readings), 0) AS \"Low pressure among loaded (%)\",\n       CASE\n           WHEN COUNT(*) = 1 THEN 100.0 * MAX(prior_low_fraction)\n       END AS \"Prior 7-day loaded share (%)\",\n       15.0 AS \"Rule floor (%)\",\n       CASE\n           WHEN COUNT(*) = 1 THEN 200.0 * MAX(prior_low_fraction)\n       END AS \"2x prior baseline (%)\"\nFROM public.mart_hourly_investigation\nWHERE hour_ts >= TO_TIMESTAMP('2021-01-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\n  AND hour_ts < TO_TIMESTAMP('2021-01-02 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\nGROUP BY DATE_TRUNC('hour', hour_ts)\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Incident investigation queue (start-date filter)",
+      "time_range": "2020-02-01 : 2020-09-02",
+      "rows": 0,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT incident_id AS incident_id,\n       DATE_TRUNC('day', starts_at) AS starts_at,\n       ends_at AS ends_at,\n       candidate_hours AS candidate_hours,\n       readings AS readings,\n       loaded_readings AS loaded_readings,\n       low_pressure_share AS low_pressure_share,\n       peak_hour_share AS peak_hour_share,\n       overlaps_reported_failure AS overlaps_reported_failure,\n       rule_version AS rule_version\nFROM public.mart_incidents\nWHERE starts_at >= TO_TIMESTAMP('2020-02-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\n  AND starts_at < TO_TIMESTAMP('2020-09-02 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\nGROUP BY incident_id,\n         DATE_TRUNC('day', starts_at),\n         ends_at,\n         candidate_hours,\n         readings,\n         loaded_readings,\n         low_pressure_share,\n         peak_hour_share,\n         overlaps_reported_failure,\n         rule_version\nORDER BY starts_at ASC\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Incident investigation queue (start-date filter)",
+      "time_range": "2020-04-01 : 2020-05-01",
+      "rows": 0,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT incident_id AS incident_id,\n       DATE_TRUNC('day', starts_at) AS starts_at,\n       ends_at AS ends_at,\n       candidate_hours AS candidate_hours,\n       readings AS readings,\n       loaded_readings AS loaded_readings,\n       low_pressure_share AS low_pressure_share,\n       peak_hour_share AS peak_hour_share,\n       overlaps_reported_failure AS overlaps_reported_failure,\n       rule_version AS rule_version\nFROM public.mart_incidents\nWHERE starts_at >= TO_TIMESTAMP('2020-04-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\n  AND starts_at < TO_TIMESTAMP('2020-05-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\nGROUP BY incident_id,\n         DATE_TRUNC('day', starts_at),\n         ends_at,\n         candidate_hours,\n         readings,\n         loaded_readings,\n         low_pressure_share,\n         peak_hour_share,\n         overlaps_reported_failure,\n         rule_version\nORDER BY starts_at ASC\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Incident investigation queue (start-date filter)",
+      "time_range": "2021-01-01 : 2021-01-02",
+      "rows": 0,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT incident_id AS incident_id,\n       DATE_TRUNC('day', starts_at) AS starts_at,\n       ends_at AS ends_at,\n       candidate_hours AS candidate_hours,\n       readings AS readings,\n       loaded_readings AS loaded_readings,\n       low_pressure_share AS low_pressure_share,\n       peak_hour_share AS peak_hour_share,\n       overlaps_reported_failure AS overlaps_reported_failure,\n       rule_version AS rule_version\nFROM public.mart_incidents\nWHERE starts_at >= TO_TIMESTAMP('2021-01-01 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\n  AND starts_at < TO_TIMESTAMP('2021-01-02 00:00:00.000000', 'YYYY-MM-DD HH24:MI:SS.US')\nGROUP BY incident_id,\n         DATE_TRUNC('day', starts_at),\n         ends_at,\n         candidate_hours,\n         readings,\n         loaded_readings,\n         low_pressure_share,\n         peak_hour_share,\n         overlaps_reported_failure,\n         rule_version\nORDER BY starts_at ASC\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Maintenance-report context (full source)",
+      "time_range": "No filter",
+      "rows": 4,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT report_id AS report_id,\n       report_type AS report_type,\n       DATE_TRUNC('day', starts_at) AS starts_at,\n       ends_at AS ends_at,\n       candidate_hours_ending_in_prior_24h AS candidate_hours_ending_in_prior_24h,\n       candidate_hours_overlapping_report AS candidate_hours_overlapping_report\nFROM public.mart_report_review\nGROUP BY report_id,\n         report_type,\n         DATE_TRUNC('day', starts_at),\n         ends_at,\n         candidate_hours_ending_in_prior_24h,\n         candidate_hours_overlapping_report\nORDER BY starts_at ASC\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Data quality and reconciliation (full source)",
+      "time_range": "No filter",
+      "rows": 1,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT raw_observations AS raw_observations,\n       hourly_observations AS hourly_observations,\n       observed_hours AS observed_hours,\n       observed_dates AS observed_dates,\n       unobserved_hour_windows AS unobserved_hour_windows,\n       duplicate_timestamps AS duplicate_timestamps,\n       missing_core_sensor_rows AS missing_core_sensor_rows,\n       reconciliation_difference AS reconciliation_difference,\n       state_reconciliation_difference AS state_reconciliation_difference,\n       is_complete_source AS is_complete_source\nFROM public.analytics_data_quality\nGROUP BY raw_observations,\n         hourly_observations,\n         observed_hours,\n         observed_dates,\n         unobserved_hour_windows,\n         duplicate_timestamps,\n         missing_core_sensor_rows,\n         reconciliation_difference,\n         state_reconciliation_difference,\n         is_complete_source\nLIMIT 10000;\n\n"
+    },
+    {
+      "chart": "Source period and pipeline provenance (full source)",
+      "time_range": "No filter",
+      "rows": 1,
+      "null_gap_points": 0,
+      "postgresql_values_match": true,
+      "sql": "SELECT source_name AS source_name,\n       first_observation AS first_observation,\n       last_observation AS last_observation,\n       pipeline_loaded_at AS pipeline_loaded_at,\n       source_sha256 AS source_sha256,\n       timestamp_context AS timestamp_context\nFROM public.analytics_data_quality\nGROUP BY source_name,\n         first_observation,\n         last_observation,\n         pipeline_loaded_at,\n         source_sha256,\n         timestamp_context\nLIMIT 10000;\n\n"
+    }
+  ],
+  "datasets": {
+    "mart_hourly": 1,
+    "mart_daily": 2,
+    "mart_hourly_investigation": 3,
+    "mart_incidents": 4,
+    "mart_report_review": 5,
+    "analytics_operating_states": 6,
+    "analytics_data_quality": 7
+  },
+  "chart_count": 16,
+  "dashboard_id": 1,
+  "dashboard_html_http_status": 200,
+  "browser_rendering": "See docs/SUPERSET.md for separate rendered verification.",
+  "independent_raw_weighting_checks": [
+    {
+      "model": "mart_hourly",
+      "start_inclusive": "2020-02-01",
+      "end_exclusive": "2020-09-02",
+      "raw_observation_count": 1516948,
+      "panel_pressure_bar": 8.9846107012236,
+      "oil_temperature_c": 62.64418173856829,
+      "loaded_observations": 71664,
+      "low_pressure_loaded_observations": 0,
+      "weighted_rollup_matches_raw": true
+    },
+    {
+      "model": "mart_daily",
+      "start_inclusive": "2020-02-01",
+      "end_exclusive": "2020-09-02",
+      "raw_observation_count": 1516948,
+      "panel_pressure_bar": 8.9846107012236,
+      "oil_temperature_c": 62.64418173856829,
+      "loaded_observations": 71664,
+      "low_pressure_loaded_observations": 0,
+      "weighted_rollup_matches_raw": true
+    },
+    {
+      "model": "mart_hourly",
+      "start_inclusive": "2020-04-01",
+      "end_exclusive": "2020-05-01",
+      "raw_observation_count": 198734,
+      "panel_pressure_bar": 9.028527327986758,
+      "oil_temperature_c": 59.452840857629056,
+      "loaded_observations": 8882,
+      "low_pressure_loaded_observations": 0,
+      "weighted_rollup_matches_raw": true
+    },
+    {
+      "model": "mart_daily",
+      "start_inclusive": "2020-04-01",
+      "end_exclusive": "2020-05-01",
+      "raw_observation_count": 198734,
+      "panel_pressure_bar": 9.028527327986758,
+      "oil_temperature_c": 59.452840857629056,
+      "loaded_observations": 8882,
+      "low_pressure_loaded_observations": 0,
+      "weighted_rollup_matches_raw": true
+    }
+  ],
+  "analytics_password_absent_from_superset_event_logs": true
+}

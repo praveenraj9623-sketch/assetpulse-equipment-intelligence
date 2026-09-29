@@ -1,0 +1,56 @@
+slice_name: Daily panel pressure (bar)
+description: Weighted by observations. Gaps mean unobserved periods; timestamps have
+  no published timezone.
+certified_by: null
+certification_details: null
+viz_type: echarts_timeseries_line
+params:
+  datasource: 2__table
+  viz_type: echarts_timeseries_line
+  time_range: '2020-02-01 : 2020-09-02'
+  granularity_sqla: reading_date
+  time_grain_sqla: P1D
+  adhoc_filters: []
+  row_limit: 10000
+  metrics:
+  - Panel pressure (bar)
+  groupby: []
+  color_scheme: supersetColors
+  show_legend: true
+  legendType: scroll
+  legendOrientation: top
+  rich_tooltip: true
+  tooltipTimeFormat: '%Y-%m-%d %H:%M'
+  y_axis_format: .2f
+  x_axis_time_format: '%b %d'
+  truncateYAxis: false
+  x_axis: reading_date
+  seriesType: line
+  showValue: false
+  markerEnabled: false
+  zoomable: true
+  connect_nulls: false
+  resample_rule: D
+  resample_method: asfreq
+  slice_id: 5
+query_context: '{"datasource": {"id": 2, "type": "table"}, "force": true, "queries":
+  [{"time_range": "2020-02-01 : 2020-09-02", "granularity": "reading_date", "filters":
+  [], "metrics": ["Panel pressure (bar)"], "columns": [], "row_limit": 10000, "orderby":
+  [], "is_timeseries": true, "extras": {"time_grain_sqla": "P1D", "having": "", "where":
+  ""}, "post_processing": [{"operation": "pivot", "options": {"index": ["__timestamp"],
+  "columns": [], "aggregates": {"Panel pressure (bar)": {"operator": "mean"}}, "drop_missing_columns":
+  false}}, {"operation": "resample", "options": {"rule": "D", "method": "asfreq",
+  "fill_value": null}}, {"operation": "flatten"}]}], "form_data": {"datasource": "2__table",
+  "viz_type": "echarts_timeseries_line", "time_range": "2020-02-01 : 2020-09-02",
+  "granularity_sqla": "reading_date", "time_grain_sqla": "P1D", "adhoc_filters": [],
+  "row_limit": 10000, "metrics": ["Panel pressure (bar)"], "groupby": [], "color_scheme":
+  "supersetColors", "show_legend": true, "legendType": "scroll", "legendOrientation":
+  "top", "rich_tooltip": true, "tooltipTimeFormat": "%Y-%m-%d %H:%M", "y_axis_format":
+  ".2f", "x_axis_time_format": "%b %d", "truncateYAxis": false, "x_axis": "reading_date",
+  "seriesType": "line", "showValue": false, "markerEnabled": false, "zoomable": true,
+  "connect_nulls": false, "resample_rule": "D", "resample_method": "asfreq", "slice_id":
+  5}, "result_format": "json", "result_type": "full"}'
+cache_timeout: 0
+uuid: ca865e07-45b1-40bc-a9a5-ee58f2bc58de
+version: 1.0.0
+dataset_uuid: 163467fb-f1c1-4419-8343-16cec514b176

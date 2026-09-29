@@ -1,0 +1,13 @@
+test_weighted_rate_and_report_overlap_follow_selected_dates (test_dashboard_contract.FilterContractTest.test_weighted_rate_and_report_overlap_follow_selected_dates) ... ok
+test_only_named_csv_is_extracted_and_hashed (test_download.ArchiveTest.test_only_named_csv_is_extracted_and_hashed) ... ok
+test_islands_baseline_and_failed_load_rollback (test_incidents.IncidentWorkflowTest.test_islands_baseline_and_failed_load_rollback) ... skipped 'requires isolated test database'
+test_invalid_digital_and_nonfinite_values_fail_with_row_number (test_ingestion.UciIngestionTest.test_invalid_digital_and_nonfinite_values_fail_with_row_number) ... ok
+test_missing_or_duplicate_signal_aborts_before_database_load (test_ingestion.UciIngestionTest.test_missing_or_duplicate_signal_aborts_before_database_load) ... ok
+test_original_header_spellings_and_float_encoded_digital_signals (test_ingestion.UciIngestionTest.test_original_header_spellings_and_float_encoded_digital_signals) ... ok
+test_transactional_load_hour_reconciliation_and_rerun (test_postgres_integration.PostgresIntegrationTest.test_transactional_load_hour_reconciliation_and_rerun) ... skipped 'requires dedicated CI Postgres'
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.014s
+
+OK (skipped=2)
+Downloaded official MetroPT-3 CSV: /tmp/tmp3q9pmnr2/data/raw/MetroPT3(AirCompressor).csv (36 bytes)

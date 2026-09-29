@@ -1,0 +1,16 @@
+{
+  "source_rows": 1516948,
+  "observed_days": 212,
+  "observed_hours": 4416,
+  "candidate_hours": 0,
+  "review_incidents": 0,
+  "checks": [
+    "raw totals",
+    "all daily counts and weighted averages",
+    "all hourly trailing baselines",
+    "independent incident grouping",
+    "export checksums"
+  ],
+  "status": "passed",
+  "source_sha256": "db30ccb4ea402e3c8bf2c99db06e288d4f2a772f6928f9dbe26a920d69793e24"
+}

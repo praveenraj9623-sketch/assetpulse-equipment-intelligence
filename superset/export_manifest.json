@@ -1,0 +1,33 @@
+{
+  "format": "Superset native YAML v1.0.0",
+  "files": [
+    "charts/Candidate_incidents_3.yaml",
+    "charts/Candidate_investigation_hours_2.yaml",
+    "charts/Daily_oil_temperature_C_6.yaml",
+    "charts/Daily_panel_pressure_bar_5.yaml",
+    "charts/Data_quality_and_reconciliation_full_source_12.yaml",
+    "charts/Eligible_observed_hours_14.yaml",
+    "charts/Hourly_low-pressure_share_historical_baseline_and_rule_9.yaml",
+    "charts/Incident_investigation_queue_start-date_filter_10.yaml",
+    "charts/Maintenance-report_context_full_source_11.yaml",
+    "charts/Not_evaluated_hours_15.yaml",
+    "charts/Observations_1.yaml",
+    "charts/Operating-state_observations_7.yaml",
+    "charts/Rule-eligible_hours_4.yaml",
+    "charts/Rule_evaluation_coverage_hours_8.yaml",
+    "charts/Source_period_and_pipeline_provenance_full_source_13.yaml",
+    "charts/Why_hours_were_not_evaluated_exclusive_counts_16.yaml",
+    "dashboards/AssetPulse_Equipment_Intelligence_1.yaml",
+    "databases/AssetPulse_Analytics_read_only.yaml",
+    "datasets/AssetPulse_Analytics_read_only/analytics_data_quality.yaml",
+    "datasets/AssetPulse_Analytics_read_only/analytics_operating_states.yaml",
+    "datasets/AssetPulse_Analytics_read_only/mart_daily.yaml",
+    "datasets/AssetPulse_Analytics_read_only/mart_hourly.yaml",
+    "datasets/AssetPulse_Analytics_read_only/mart_hourly_investigation.yaml",
+    "datasets/AssetPulse_Analytics_read_only/mart_incidents.yaml",
+    "datasets/AssetPulse_Analytics_read_only/mart_report_review.yaml",
+    "metadata.yaml"
+  ],
+  "credentials_removed": true,
+  "restore": "Use scripts/setup_superset.py on the existing instance. Native import requires supplying analytics credentials privately."
+}

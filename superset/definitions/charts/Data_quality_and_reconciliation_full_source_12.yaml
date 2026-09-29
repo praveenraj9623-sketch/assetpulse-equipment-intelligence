@@ -1,0 +1,63 @@
+slice_name: Data quality and reconciliation (full source)
+description: ''
+certified_by: null
+certification_details: null
+viz_type: table
+params:
+  datasource: 7__table
+  viz_type: table
+  time_range: No filter
+  granularity_sqla: null
+  time_grain_sqla: P1D
+  adhoc_filters: []
+  row_limit: 10000
+  metrics: []
+  groupby: []
+  color_scheme: supersetColors
+  show_legend: true
+  legendType: scroll
+  legendOrientation: top
+  rich_tooltip: true
+  tooltipTimeFormat: '%Y-%m-%d %H:%M'
+  y_axis_format: .2f
+  x_axis_time_format: '%b %d'
+  truncateYAxis: false
+  query_mode: raw
+  all_columns:
+  - raw_observations
+  - hourly_observations
+  - observed_hours
+  - observed_dates
+  - unobserved_hour_windows
+  - duplicate_timestamps
+  - missing_core_sensor_rows
+  - reconciliation_difference
+  - state_reconciliation_difference
+  - is_complete_source
+  page_length: 10
+  include_search: false
+  order_desc: false
+  table_timestamp_format: '%Y-%m-%d %H:%M'
+  allow_render_html: false
+  slice_id: 12
+query_context: '{"datasource": {"id": 7, "type": "table"}, "force": true, "queries":
+  [{"time_range": "No filter", "granularity": null, "filters": [], "metrics": [],
+  "columns": ["raw_observations", "hourly_observations", "observed_hours", "observed_dates",
+  "unobserved_hour_windows", "duplicate_timestamps", "missing_core_sensor_rows", "reconciliation_difference",
+  "state_reconciliation_difference", "is_complete_source"], "row_limit": 10000, "orderby":
+  [], "is_timeseries": false, "extras": {"time_grain_sqla": "P1D", "having": "", "where":
+  ""}}], "form_data": {"datasource": "7__table", "viz_type": "table", "time_range":
+  "No filter", "granularity_sqla": null, "time_grain_sqla": "P1D", "adhoc_filters":
+  [], "row_limit": 10000, "metrics": [], "groupby": [], "color_scheme": "supersetColors",
+  "show_legend": true, "legendType": "scroll", "legendOrientation": "top", "rich_tooltip":
+  true, "tooltipTimeFormat": "%Y-%m-%d %H:%M", "y_axis_format": ".2f", "x_axis_time_format":
+  "%b %d", "truncateYAxis": false, "query_mode": "raw", "all_columns": ["raw_observations",
+  "hourly_observations", "observed_hours", "observed_dates", "unobserved_hour_windows",
+  "duplicate_timestamps", "missing_core_sensor_rows", "reconciliation_difference",
+  "state_reconciliation_difference", "is_complete_source"], "page_length": 10, "include_search":
+  false, "order_desc": false, "table_timestamp_format": "%Y-%m-%d %H:%M", "allow_render_html":
+  false, "slice_id": 12}, "result_format": "json", "result_type": "full"}'
+cache_timeout: 0
+uuid: c2da2fce-9415-40a8-a12c-6c99f01990f0
+version: 1.0.0
+dataset_uuid: d6b7d98f-83be-47cc-ba03-280d28c9a7e7

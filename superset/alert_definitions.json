@@ -1,0 +1,70 @@
+[
+  {
+    "type": "Alert",
+    "active": false,
+    "crontab": "* * * * *",
+    "timezone": "UTC",
+    "database": 1,
+    "dashboard": 1,
+    "owners": [
+      1
+    ],
+    "creation_method": "alerts_reports",
+    "validator_type": "operator",
+    "validator_config_json": {
+      "op": ">",
+      "threshold": 0
+    },
+    "grace_period": 120,
+    "working_timeout": 30,
+    "log_retention": 90,
+    "report_format": "PNG",
+    "force_screenshot": false,
+    "recipients": [
+      {
+        "type": "Email",
+        "recipient_config_json": {
+          "target": "assetpulse-test@local.test"
+        }
+      }
+    ],
+    "name": "AssetPulse TEST ONLY - local deterministic fixture",
+    "sql": "WITH test_only_fixture(value) AS (VALUES (0)) SELECT value FROM test_only_fixture",
+    "description": "TEST ONLY: isolated constant SQL fixture. No telemetry or equipment diagnosis. Local Mailpit delivery only.",
+    "id": 1
+  },
+  {
+    "type": "Alert",
+    "active": false,
+    "crontab": "0 9 * * *",
+    "timezone": "UTC",
+    "database": 1,
+    "dashboard": 1,
+    "owners": [
+      1
+    ],
+    "creation_method": "alerts_reports",
+    "validator_type": "operator",
+    "validator_config_json": {
+      "op": ">",
+      "threshold": 0
+    },
+    "grace_period": 86400,
+    "working_timeout": 30,
+    "log_retention": 90,
+    "report_format": "PNG",
+    "force_screenshot": false,
+    "recipients": [
+      {
+        "type": "Email",
+        "recipient_config_json": {
+          "target": "assetpulse-test@local.test"
+        }
+      }
+    ],
+    "name": "AssetPulse HISTORICAL ONLY - candidate rule (disabled)",
+    "sql": "SELECT COUNT(*) FROM mart_hourly_investigation WHERE rule_eligible AND evaluation_status = 'Evaluated: breach' AND hour_ts >= TIMESTAMP '2020-02-01' AND hour_ts < TIMESTAMP '2020-09-02'",
+    "description": "DISABLED historical 2020 rule review, not live equipment monitoring. Only 186/4416 observed hours eligible (4.21%). The >=6 A loaded proxy needs domain validation. Repeated queries of static history do not detect new equipment events. Local capture recipient only.",
+    "id": 2
+  }
+]

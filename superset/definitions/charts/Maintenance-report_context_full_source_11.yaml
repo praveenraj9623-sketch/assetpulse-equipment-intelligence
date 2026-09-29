@@ -1,0 +1,59 @@
+slice_name: Maintenance-report context (full source)
+description: ''
+certified_by: null
+certification_details: null
+viz_type: table
+params:
+  datasource: 5__table
+  viz_type: table
+  time_range: No filter
+  granularity_sqla: starts_at
+  time_grain_sqla: P1D
+  adhoc_filters: []
+  row_limit: 10000
+  metrics: []
+  groupby: []
+  color_scheme: supersetColors
+  show_legend: true
+  legendType: scroll
+  legendOrientation: top
+  rich_tooltip: true
+  tooltipTimeFormat: '%Y-%m-%d %H:%M'
+  y_axis_format: .2f
+  x_axis_time_format: '%b %d'
+  truncateYAxis: false
+  query_mode: raw
+  all_columns:
+  - report_id
+  - report_type
+  - starts_at
+  - ends_at
+  - candidate_hours_ending_in_prior_24h
+  - candidate_hours_overlapping_report
+  page_length: 10
+  include_search: false
+  order_desc: false
+  table_timestamp_format: '%Y-%m-%d %H:%M'
+  allow_render_html: false
+  order_by_cols:
+  - '["starts_at", true]'
+  slice_id: 11
+query_context: '{"datasource": {"id": 5, "type": "table"}, "force": true, "queries":
+  [{"time_range": "No filter", "granularity": "starts_at", "filters": [], "metrics":
+  [], "columns": ["report_id", "report_type", "starts_at", "ends_at", "candidate_hours_ending_in_prior_24h",
+  "candidate_hours_overlapping_report"], "row_limit": 10000, "orderby": [["starts_at",
+  true]], "is_timeseries": false, "extras": {"time_grain_sqla": "P1D", "having": "",
+  "where": ""}}], "form_data": {"datasource": "5__table", "viz_type": "table", "time_range":
+  "No filter", "granularity_sqla": "starts_at", "time_grain_sqla": "P1D", "adhoc_filters":
+  [], "row_limit": 10000, "metrics": [], "groupby": [], "color_scheme": "supersetColors",
+  "show_legend": true, "legendType": "scroll", "legendOrientation": "top", "rich_tooltip":
+  true, "tooltipTimeFormat": "%Y-%m-%d %H:%M", "y_axis_format": ".2f", "x_axis_time_format":
+  "%b %d", "truncateYAxis": false, "query_mode": "raw", "all_columns": ["report_id",
+  "report_type", "starts_at", "ends_at", "candidate_hours_ending_in_prior_24h", "candidate_hours_overlapping_report"],
+  "page_length": 10, "include_search": false, "order_desc": false, "table_timestamp_format":
+  "%Y-%m-%d %H:%M", "allow_render_html": false, "order_by_cols": ["[\"starts_at\",
+  true]"], "slice_id": 11}, "result_format": "json", "result_type": "full"}'
+cache_timeout: 0
+uuid: f26d1ff3-6e1e-4239-9d19-fdd28f02b095
+version: 1.0.0
+dataset_uuid: f0b25164-3f16-41d8-8def-5a8a91a5b349

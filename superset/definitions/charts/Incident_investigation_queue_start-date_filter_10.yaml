@@ -1,0 +1,66 @@
+slice_name: Incident investigation queue (start-date filter)
+description: An empty table is valid. Candidate hour windows do not establish equipment
+  downtime.
+certified_by: null
+certification_details: null
+viz_type: table
+params:
+  datasource: 4__table
+  viz_type: table
+  time_range: '2020-02-01 : 2020-09-02'
+  granularity_sqla: starts_at
+  time_grain_sqla: P1D
+  adhoc_filters: []
+  row_limit: 10000
+  metrics: []
+  groupby: []
+  color_scheme: supersetColors
+  show_legend: true
+  legendType: scroll
+  legendOrientation: top
+  rich_tooltip: true
+  tooltipTimeFormat: '%Y-%m-%d %H:%M'
+  y_axis_format: .2f
+  x_axis_time_format: '%b %d'
+  truncateYAxis: false
+  query_mode: raw
+  all_columns:
+  - incident_id
+  - starts_at
+  - ends_at
+  - candidate_hours
+  - readings
+  - loaded_readings
+  - low_pressure_share
+  - peak_hour_share
+  - overlaps_reported_failure
+  - rule_version
+  page_length: 10
+  include_search: true
+  order_desc: false
+  table_timestamp_format: '%Y-%m-%d %H:%M'
+  allow_render_html: false
+  order_by_cols:
+  - '["starts_at", true]'
+  slice_id: 10
+query_context: '{"datasource": {"id": 4, "type": "table"}, "force": true, "queries":
+  [{"time_range": "2020-02-01 : 2020-09-02", "granularity": "starts_at", "filters":
+  [], "metrics": [], "columns": ["incident_id", "starts_at", "ends_at", "candidate_hours",
+  "readings", "loaded_readings", "low_pressure_share", "peak_hour_share", "overlaps_reported_failure",
+  "rule_version"], "row_limit": 10000, "orderby": [["starts_at", true]], "is_timeseries":
+  false, "extras": {"time_grain_sqla": "P1D", "having": "", "where": ""}}], "form_data":
+  {"datasource": "4__table", "viz_type": "table", "time_range": "2020-02-01 : 2020-09-02",
+  "granularity_sqla": "starts_at", "time_grain_sqla": "P1D", "adhoc_filters": [],
+  "row_limit": 10000, "metrics": [], "groupby": [], "color_scheme": "supersetColors",
+  "show_legend": true, "legendType": "scroll", "legendOrientation": "top", "rich_tooltip":
+  true, "tooltipTimeFormat": "%Y-%m-%d %H:%M", "y_axis_format": ".2f", "x_axis_time_format":
+  "%b %d", "truncateYAxis": false, "query_mode": "raw", "all_columns": ["incident_id",
+  "starts_at", "ends_at", "candidate_hours", "readings", "loaded_readings", "low_pressure_share",
+  "peak_hour_share", "overlaps_reported_failure", "rule_version"], "page_length":
+  10, "include_search": true, "order_desc": false, "table_timestamp_format": "%Y-%m-%d
+  %H:%M", "allow_render_html": false, "order_by_cols": ["[\"starts_at\", true]"],
+  "slice_id": 10}, "result_format": "json", "result_type": "full"}'
+cache_timeout: 0
+uuid: a9033559-00ed-4c31-88d3-58a4cc2d31f7
+version: 1.0.0
+dataset_uuid: 7a2f18f5-4dae-42a5-8662-70285669e466

@@ -1,0 +1,20 @@
+{
+  "date": "2026-09-28",
+  "url": "http://localhost:8089/superset/dashboard/assetpulse-equipment-intelligence/",
+  "signed_in_browser": true,
+  "charts_loaded": 13,
+  "full_period_observations": 1516948,
+  "full_period_candidate_hours": 0,
+  "full_period_candidate_incidents": 0,
+  "full_period_eligible_hours": 186,
+  "april_2020_observations": 198734,
+  "april_2020_eligible_hours": 18,
+  "april_2020_insufficient_history_hours": 571,
+  "april_values_matched_postgresql": true,
+  "maintenance_rows_retained_during_filter": 4,
+  "source_quality_unaffected_by_time_filter": true,
+  "empty_incident_state_visible": true,
+  "missing_date_gaps_visible": true,
+  "postgresql_recovered_by_starting_existing_container": true,
+  "screenshot": "evidence/superset_dashboard.png"
+}

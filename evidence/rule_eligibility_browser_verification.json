@@ -1,0 +1,11 @@
+{
+  "verified_local_date": "2026-09-29",
+  "dashboard_url": "http://localhost:8089/superset/dashboard/assetpulse-equipment-intelligence/",
+  "default_period": "2020-02-01 inclusive to 2020-09-02 exclusive",
+  "full_period": {"observations": 1516948, "eligible_hours": 186, "eligibility_percent_display": 4.21, "not_evaluated_hours": 4230, "current_only": 4204, "baseline_only": 0, "both": 26, "missing_rates": 0, "candidate_incidents": 0},
+  "april_filter_previously_verified": {"observed_hours": 589, "eligible_hours": 18, "eligibility_percent_display": 3.06, "not_evaluated_hours": 571},
+  "default_period_restored": true,
+  "chart_query_errors_after_database_start": false,
+  "runtime_recovery": "Started existing stopped Compose db container; no recreation or volume changes.",
+  "screenshots": ["evidence/superset_eligibility.png", "evidence/superset_eligibility_reasons.png"]
+}

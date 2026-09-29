@@ -1,0 +1,101 @@
+table_name: mart_report_review
+main_dttm_col: starts_at
+description: Four external maintenance intervals with candidate counts. Prior-24-hour
+  count uses hour-ending boundaries. Full-source dashboard context.
+default_endpoint: null
+offset: 0
+cache_timeout: 0
+schema: public
+sql: null
+params: null
+template_params: null
+filter_select_enabled: true
+fetch_values_predicate: null
+extra: null
+normalize_columns: false
+uuid: f0b25164-3f16-41d8-8def-5a8a91a5b349
+metrics:
+- metric_name: Maintenance reports
+  verbose_name: Maintenance reports
+  metric_type: null
+  expression: COUNT(*)
+  description: Externally reported intervals; not exhaustive fault labels.
+  d3format: ',.0f'
+  currency: null
+  extra: null
+  warning_text: null
+columns:
+- column_name: candidate_hours_ending_in_prior_24h
+  verbose_name: Candidate hours ending in prior 24h
+  is_dttm: false
+  is_active: true
+  type: BIGINT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: ends_at
+  verbose_name: Ends at
+  is_dttm: true
+  is_active: true
+  type: TIMESTAMP WITHOUT TIME ZONE
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: starts_at
+  verbose_name: Starts at
+  is_dttm: true
+  is_active: true
+  type: TIMESTAMP WITHOUT TIME ZONE
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: candidate_hours_overlapping_report
+  verbose_name: Candidate hours overlapping report
+  is_dttm: false
+  is_active: true
+  type: BIGINT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: report_id
+  verbose_name: Report id
+  is_dttm: false
+  is_active: true
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: report_type
+  verbose_name: Report type
+  is_dttm: false
+  is_active: true
+  type: TEXT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+version: 1.0.0
+database_uuid: 12e82297-35e6-4aa4-91fd-21caf0c42c06

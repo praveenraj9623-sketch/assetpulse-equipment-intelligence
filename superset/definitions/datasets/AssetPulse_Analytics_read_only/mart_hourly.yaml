@@ -1,0 +1,255 @@
+table_name: mart_hourly
+main_dttm_col: hour_ts
+description: One row per observed hour; sums support observation-weighted rollups.
+default_endpoint: null
+offset: 0
+cache_timeout: 0
+schema: public
+sql: null
+params: null
+template_params: null
+filter_select_enabled: true
+fetch_values_predicate: null
+extra: null
+normalize_columns: false
+uuid: 226b6705-cf7d-4699-9593-827746ccb247
+metrics:
+- metric_name: Low pressure among loaded (%)
+  verbose_name: Low pressure among loaded (%)
+  metric_type: null
+  expression: 100.0 * SUM(low_pressure_loaded_readings) / NULLIF(SUM(loaded_readings),
+    0)
+  description: TP3 < 7 bar and motor current >= 6 A, divided by loaded observations.
+    NULL when none loaded.
+  d3format: .2f
+  currency: null
+  extra: null
+  warning_text: null
+- metric_name: Panel pressure (bar)
+  verbose_name: Panel pressure (bar)
+  metric_type: null
+  expression: SUM(panel_pressure_sum) / NULLIF(SUM(readings), 0)
+  description: Observation-weighted TP3 pressure. Denominator is observations.
+  d3format: .3f
+  currency: null
+  extra: null
+  warning_text: null
+- metric_name: Pressure gap (bar)
+  verbose_name: Pressure gap (bar)
+  metric_type: null
+  expression: SUM(pressure_gap_sum) / NULLIF(SUM(readings), 0)
+  description: Observation-weighted absolute TP3 minus reservoir pressure.
+  d3format: .3f
+  currency: null
+  extra: null
+  warning_text: null
+- metric_name: Oil temperature (C)
+  verbose_name: Oil temperature (C)
+  metric_type: null
+  expression: SUM(oil_temperature_sum) / NULLIF(SUM(readings), 0)
+  description: Observation-weighted oil temperature, degrees Celsius.
+  d3format: .2f
+  currency: null
+  extra: null
+  warning_text: null
+- metric_name: Loaded observations
+  verbose_name: Loaded observations
+  metric_type: null
+  expression: COALESCE(SUM(loaded_readings), 0)
+  description: Motor current >= 6 A; observation count, not duration.
+  d3format: ',.0f'
+  currency: null
+  extra: null
+  warning_text: null
+- metric_name: Observations
+  verbose_name: Observations
+  metric_type: null
+  expression: COALESCE(SUM(readings), 0)
+  description: Sensor observations; additive across disjoint time bins.
+  d3format: ',.0f'
+  currency: null
+  extra: null
+  warning_text: null
+columns:
+- column_name: avg_panel_pressure_bar
+  verbose_name: Avg panel pressure bar
+  is_dttm: false
+  is_active: true
+  type: DOUBLE PRECISION
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: avg_pressure_gap_bar
+  verbose_name: Avg pressure gap bar
+  is_dttm: false
+  is_active: true
+  type: DOUBLE PRECISION
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: avg_reservoir_pressure_bar
+  verbose_name: Avg reservoir pressure bar
+  is_dttm: false
+  is_active: true
+  type: DOUBLE PRECISION
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: avg_oil_temperature_c
+  verbose_name: Avg oil temperature c
+  is_dttm: false
+  is_active: true
+  type: DOUBLE PRECISION
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: avg_motor_current_a
+  verbose_name: Avg motor current a
+  is_dttm: false
+  is_active: true
+  type: DOUBLE PRECISION
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: hour_ts
+  verbose_name: Hour ts
+  is_dttm: true
+  is_active: true
+  type: TIMESTAMP WITHOUT TIME ZONE
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: oil_temperature_sum
+  verbose_name: Oil temperature sum
+  is_dttm: false
+  is_active: true
+  type: DOUBLE PRECISION
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: panel_pressure_sum
+  verbose_name: Panel pressure sum
+  is_dttm: false
+  is_active: true
+  type: DOUBLE PRECISION
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: pressure_gap_sum
+  verbose_name: Pressure gap sum
+  is_dttm: false
+  is_active: true
+  type: DOUBLE PRECISION
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: low_pressure_loaded_readings
+  verbose_name: Low pressure loaded readings
+  is_dttm: false
+  is_active: true
+  type: BIGINT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: lps_active_readings
+  verbose_name: Lps active readings
+  is_dttm: false
+  is_active: true
+  type: BIGINT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: idle_readings
+  verbose_name: Idle readings
+  is_dttm: false
+  is_active: true
+  type: BIGINT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: loaded_readings
+  verbose_name: Loaded readings
+  is_dttm: false
+  is_active: true
+  type: BIGINT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: unloaded_readings
+  verbose_name: Unloaded readings
+  is_dttm: false
+  is_active: true
+  type: BIGINT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: readings
+  verbose_name: Readings
+  is_dttm: false
+  is_active: true
+  type: BIGINT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+version: 1.0.0
+database_uuid: 12e82297-35e6-4aa4-91fd-21caf0c42c06

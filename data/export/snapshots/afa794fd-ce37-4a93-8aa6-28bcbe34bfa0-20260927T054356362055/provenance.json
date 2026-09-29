@@ -1,0 +1,35 @@
+{
+  "schema_version": 2,
+  "run_id": "afa794fd-ce37-4a93-8aa6-28bcbe34bfa0",
+  "source": "UCI MetroPT-3",
+  "source_url": "https://archive.ics.uci.edu/dataset/791/metropt+3+dataset",
+  "doi": "10.24432/C5VW3R",
+  "license": "CC BY 4.0",
+  "source_sha256": "db30ccb4ea402e3c8bf2c99db06e288d4f2a772f6928f9dbe26a920d69793e24",
+  "original_reading_count": 1516948,
+  "loaded_at": "2026-09-26T22:42:38.801000-07:00",
+  "exported_at": "2026-09-27T05:43:56.361811+00:00",
+  "first_reading": "2020-02-01T00:00:00",
+  "last_reading": "2020-09-01T03:59:50",
+  "duplicate_timestamps": 0,
+  "database_version": "PostgreSQL 18.3 (PGlite 0.5.8) on wasm32-unknown-emscripten, compiled by emcc (Emscripten gcc/clang-like replacement + linker emulating GNU ld) 3.1.74 (1092ec30a3fb1d46b1782ff1b4db5094d3d06ae5), 32-bit",
+  "timestamp_policy": "Original naive timestamps; source timezone unspecified.",
+  "kind": "Historical observations; SQL-derived aggregates",
+  "rule": {
+    "version": "pressure-v1",
+    "loaded_current_a": 6,
+    "low_pressure_bar": 7,
+    "minimum_loaded_readings": 30,
+    "minimum_prior_loaded_readings": 300,
+    "minimum_hour_share": 0.15,
+    "relative_to_prior": 2,
+    "prior_days": 7
+  },
+  "files": {
+    "hourly_investigation.csv": "eda7861a36ebd9d4a400d3abca237d6a56c6bda055abdc4018b94b154914476e",
+    "daily_metrics.csv": "c6d5d4559549f59e55bdb948c7064ad05d178082ae8e2bf1d0a4928377a2f540",
+    "failure_reports.csv": "8dc966ed517c67aed7400b12bffcca20000e2877acbb2c2ee989dde98efa90f1",
+    "incidents.csv": "eb90839290daf18374c9d394ed3dd23c412a4c990d5cd5189d27d9ec447683fa",
+    "report_review.csv": "ff7792670ce923cbf506959e91cbbddda56e76e798fbd053ee7c1d05fe0f6cf6"
+  }
+}
